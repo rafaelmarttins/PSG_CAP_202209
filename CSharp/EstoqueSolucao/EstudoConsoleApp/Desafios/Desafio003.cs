@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace EstudoConsoleApp.Desafios
 {
+    /// <summary>
+    /// Desafio 003 – Crie um programa que leia dos números e tente mostrar a soma entre eles.
+    /// </summary>
     public static class Desafio003
     {
         public static void Somar()

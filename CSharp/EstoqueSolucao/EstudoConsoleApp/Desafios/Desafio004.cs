@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace EstudoConsoleApp.Desafios
 {
+    /// <summary>
+    /// Desafio 004 - Crie um programa que leia um número e mostre o seu dobro, seu triplo e sua raiz
+    //  quadrada.
+    /// </summary>
     public static class Desafio004
     {
         public static void DobroTriploRaiz()
@@ -18,7 +22,7 @@ namespace EstudoConsoleApp.Desafios
             Console.WriteLine();
             Console.WriteLine("O Triplo é: {0}", (valor * 3));
             Console.WriteLine();
-            Console.WriteLine("A Raiz Quadrada é: {0}", (float)Math.Sqrt(valor));
+            Console.WriteLine("A Raiz Quadrada é: {0}", Math.Sqrt(Convert.ToDouble(valor)));
         }
     }
 }

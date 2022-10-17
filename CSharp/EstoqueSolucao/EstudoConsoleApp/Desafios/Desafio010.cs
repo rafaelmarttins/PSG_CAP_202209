@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace EstudoConsoleApp.Desafios
 {
+    /// <summary>
+    /// Desafio 010 - Faça um programa que leia o preço de um produto, e mostre seu novo preço, com
+    /// 5% de desconto.
+    /// </summary>
     public static class Desafio010
     {
         public static void Desconto()

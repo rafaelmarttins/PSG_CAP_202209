@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace EstudoConsoleApp.Desafios
 {
+    /// <summary>
+    /// Desafio 002 – Crie um programa que leia o dia, o mês e ano de nascimento de uma pessoa e
+    //  mostre uma mensagem com a data formatada.
+    /// </summary>
     public static class Desafio002
     {
         public static void DataFormatada()
@@ -16,6 +20,10 @@ namespace EstudoConsoleApp.Desafios
             int mes = int.Parse(Console.ReadLine());
             Console.Write("E o ano que você nasceu: ");
             int ano = int.Parse(Console.ReadLine());
+
+            //DateTime data = new DateTime(ano, mes, dia);
+            //Console.WriteLine("A data informada foi: ");
+            //Console.WriteLine(data.ToString("dddd, dd MMMM yyyy"));
 
             if (dia > 31 || dia < 1)
             {

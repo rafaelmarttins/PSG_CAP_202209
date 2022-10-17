@@ -17,7 +17,7 @@ public class Program
 
 
         //ExecutarDesafio001();
-        ExecutarDesafio002();
+        //ExecutarDesafio002();
         //ExecutarDesafio003();
         //ExecutarDesafio004();
         //ExecutarDesafio005();

@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace EstudoConsoleApp.Desafios
 {
+    /// <summary>
+    /// Desafio 005 - Desenvolva um programa que leia as duas notas de um aluno, calcule e mostre a
+    //  sua média.
+    /// </summary>
     public static class Desafio005
     {
         public static void CalcularMedia()
