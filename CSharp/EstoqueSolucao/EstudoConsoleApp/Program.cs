@@ -10,14 +10,14 @@ public class Program
     public static void Main(string[] args)
     {
         // Exemplos de Comparações lógicas e Operações Matemáticas.
-        
+
         //ExecutarExemplo001();
         //ExecutarExemplo002();
         //ExecutarExemplo003();
         //ExecutarExemplo004();
         //ExecutarExemplo005();
 
-        // LISTA DESAFIOS SEM VALIDAÇÕES
+        // LISTA 01 DESAFIOS SEM VALIDAÇÕES
 
         //Desafio001.Executar();
         //Desafio002.Executar();
@@ -26,11 +26,11 @@ public class Program
         //Desafio005.Executar();
         //Desafio006.Executar();
         //Desafio007.Executar();
-        //Desafio008.Executar();
+        //Desafio008.Executar();s
         //Desafio009.Executar();
         //Desafio010.Executar();
 
-        // LISTA DESAFIOS COM VALIDAÇÕES
+        // LISTA 01 DESAFIOS COM VALIDAÇÕES
 
         //Desafio001v2.Executar();
         //Desafio002v2.Executar();
@@ -43,6 +43,18 @@ public class Program
         //Desafio009v2.Executar();
         //Desafio010v2.Executar();
 
+        // LISTA 02 DESAFIOS SEM VALIDAÇÕES 
+
+        //Desafio011.Executar();
+        //Desafio012.Executar();
+        //Desafio013.Executar();
+        //Desafio014.Executar();
+        //Desafio015.Executar();
+        //Desafio016.Executar();
+        //Desafio017.Executar();
+        //Desafio018.Executar();
+        //Desafio019.Executar();
+        Desafio020.Executar();
     }
 
     public static void ExecutarExemplo001()
