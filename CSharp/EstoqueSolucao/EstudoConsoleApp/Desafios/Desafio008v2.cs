@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,15 +11,19 @@ namespace EstudoConsoleApp.Desafios
     /// comprar.
     ///  Considere US$ 1,00 = R$ 5,00
     /// </summary>
-    public static class Desafio008
+    public static class Desafio008v2
     {
         public static void Executar()
         {
+            double real, dolar;
             Console.Write("Digite quanto dinheiro você tem: ");
-            double real = int.Parse(Console.ReadLine());
-            double dolar = real / 5.00;
+            if (double.TryParse(Console.ReadLine(), out real) == false)
+            {
+                Console.WriteLine("Neste campo é aceito somente números.");
+                return;
+            }
             Console.WriteLine();
-            Console.Write($"Com {real} reais você pode comprar {dolar} dolars.");
+            Console.Write("Com {0} reais você pode comprar {1} dolars.", real, real / 5.00);
         }
     }
 }

@@ -10,19 +10,21 @@ namespace EstudoConsoleApp.Desafios
     /// Desafio 010 - Faça um programa que leia o preço de um produto, e mostre seu novo preço, com
     /// 5% de desconto.
     /// </summary>
-    public static class Desafio010
+    public static class Desafio010v2
     {
         public static void Executar()
         {
+            double preco, desconto = 5.00, resultado;
             Console.Write("Digite o preço do produto: ");
-            double preco = double.Parse(Console.ReadLine());
-            double desconto = 5.00;
-            double resultado = preco - (preco * desconto) / 100;
+            if (double.TryParse(Console.ReadLine(), out preco) == false)
+            {
+                Console.WriteLine("Neste campo é aceito somente números.");
+                return;
+            }
 
-            Console.WriteLine();
             Console.WriteLine($"Preço do produto sem desconto {preco}");
             Console.WriteLine();
-            Console.Write($"Preço do produto com desconto {resultado}");
+            Console.Write("Preço do produto com desconto {0}", preco -(preco * desconto) / 100);
         }
     }
 }

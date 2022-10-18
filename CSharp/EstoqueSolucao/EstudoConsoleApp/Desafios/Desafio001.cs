@@ -7,31 +7,18 @@ using System.Threading.Tasks;
 
 namespace EstudoConsoleApp.Desafios
 {
-    /// <summary>
-    /// Desafio 001 - Crie um programa que leia o nome de uma pessoa e mostre uma mensagem de 
-    /// boas-vindas de acordo com o valor digitado
-    /// </summary>
+        /// <summary>
+        /// Desafio 001 - Crie um programa que leia o nome de uma pessoa e mostre uma mensagem de 
+        /// boas-vindas de acordo com o valor digitado
+        /// </summary>
     public static class Desafio001
     {
-        public static void BoasVindas()
+        public static void Executar()
         {
             Console.Write("Favor digitar seu primeiro nome: ");
             string nome = Console.ReadLine();
 
-            if (string.IsNullOrEmpty(nome)) // Poderia usar "" vazia.
-            {
-                Console.WriteLine("Campo Obrigatório Digite seu Nome.");
-            }
-            else if (!Regex.IsMatch(nome, @"^[a-zA-Z]+$")) // Condição para aceitar apenas string
-            {
-                Console.WriteLine();
-                Console.WriteLine("Seu nome não pode conter números,caracteres especiais ou espaços.");
-            }
-            else
-            {
-                Console.WriteLine();
-                Console.WriteLine($"Seja Bem Vindo {nome}!");
-            }
+            Console.WriteLine($"Seja Bem Vindo {nome}!");
         }
     }
 }

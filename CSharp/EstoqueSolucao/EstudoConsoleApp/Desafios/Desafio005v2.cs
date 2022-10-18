@@ -9,16 +9,26 @@ namespace EstudoConsoleApp.Desafios
     /// <summary>
     /// Desafio 005 - Desenvolva um programa que leia as duas notas de um aluno, calcule e mostre a sua média.
     /// </summary>
-    public static class Desafio005
+    public static class Desafio005v2
     {
         public static void Executar()
         {
-            Console.Write("Informe a primeira nota: ");
-            float nota1 = float.Parse(Console.ReadLine());
-            Console.Write("Informe a segunda nota: ");
-            float nota2 = float.Parse(Console.ReadLine());
+            double nota1, nota2;
 
-            float media = (nota1 + nota2) / 2;
+            Console.Write("Informe a primeira nota: ");
+            if (double.TryParse(Console.ReadLine(), out nota1) == false)
+            {
+                Console.WriteLine("Neste campo é aceito somente números.");
+                return;
+            }
+            Console.Write("Informe a segunda nota: ");
+            if (double.TryParse(Console.ReadLine(), out nota2) == false)
+            {
+                Console.WriteLine("Neste campo é aceito somente números.");
+                return;
+            }
+
+            double media = (nota1 + nota2) / 2;
             Console.WriteLine();
             Console.WriteLine($"A média do aluno é: {media}");
         }

@@ -6,17 +6,22 @@ using System.Threading.Tasks;
 
 namespace EstudoConsoleApp.Desafios
 {
-    /// <summary>
-    /// Desafio 004 - Crie um programa que leia um número e mostre o seu dobro, seu triplo e sua raiz quadrada.
-    /// </summary>
-    public static class Desafio004
+    public static class Desafio004v2
     {
+        /// <summary>
+        /// Desafio 004 - Crie um programa que leia um número e mostre o seu dobro, seu triplo e sua raiz quadrada.
+        /// </summary>
         public static void Executar()
         {
-            Console.Write("Informe o um número: ");
-            int valor = int.Parse(Console.ReadLine());
+            int valor;
 
-            Console.WriteLine();
+            Console.Write("Informe o um número: ");
+            if (Int32.TryParse(Console.ReadLine(), out valor) == false)
+            {
+                Console.WriteLine("Neste campo é aceito somente números.");
+                return;
+            }
+
             Console.WriteLine("O dobro é: {0}", (valor * 2));
             Console.WriteLine();
             Console.WriteLine("O Triplo é: {0}", (valor * 3));

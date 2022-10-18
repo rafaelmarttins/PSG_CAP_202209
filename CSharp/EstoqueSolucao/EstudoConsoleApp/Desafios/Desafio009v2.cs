@@ -11,18 +11,27 @@ namespace EstudoConsoleApp.Desafios
     ///  a sua área e a quantidade de tinta necessária para pintá-la, sabendo que cada litro de tinta pinta
     ///  uma área de 2 metros quadrados.
     /// </summary>
-    public static class Desafio009
+    public static class Desafio009v2
     {
         public static void Executar()
         {
+            double largura, altura, tinta;
+
             Console.Write("Digite a largura da parede em metros: ");
-            float largura = float.Parse(Console.ReadLine());
+            if (double.TryParse(Console.ReadLine(), out largura) == false)
+            {
+                Console.WriteLine("Neste campo é aceito somente números.");
+                return;
+            }
             Console.Write("Digite a altura da parede em metros: ");
-            float altura = float.Parse(Console.ReadLine());
-            float tinta = largura * altura / 2;
+            if (double.TryParse(Console.ReadLine(), out altura) == false)
+            {
+                Console.WriteLine("Neste campo é aceito somente números.");
+                return;
+            }
 
             Console.WriteLine();
-            Console.Write($"É necessário {tinta}L de tinta para pintar a parede.");
+            Console.Write("É necessário {0}L de tinta para pintar a parede.", largura * altura / 2);
         }
     }
 }

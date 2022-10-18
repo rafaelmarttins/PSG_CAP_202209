@@ -9,23 +9,40 @@ public class Program
 {
     public static void Main(string[] args)
     {
+        // Exemplos de Comparações lógicas e Operações Matemáticas.
+        
         //ExecutarExemplo001();
         //ExecutarExemplo002();
         //ExecutarExemplo003();
         //ExecutarExemplo004();
         //ExecutarExemplo005();
 
+        // LISTA DESAFIOS SEM VALIDAÇÕES
 
-        //ExecutarDesafio001();
-        //ExecutarDesafio002();
-        //ExecutarDesafio003();
-        //ExecutarDesafio004();
-        //ExecutarDesafio005();
-        //ExecutarDesafio006();
-        //ExecutarDesafio007();
-        //ExecutarDesafio008();
-        //ExecutarDesafio009();
-        //ExecutarDesafio010();
+        //Desafio001.Executar();
+        //Desafio002.Executar();
+        //Desafio003.Executar();
+        //Desafio004.Executar();
+        //Desafio005.Executar();
+        //Desafio006.Executar();
+        //Desafio007.Executar();
+        //Desafio008.Executar();
+        //Desafio009.Executar();
+        //Desafio010.Executar();
+
+        // LISTA DESAFIOS COM VALIDAÇÕES
+
+        //Desafio001v2.Executar();
+        //Desafio002v2.Executar();
+        //Desafio003v2.Executar();
+        //Desafio004v2.Executar();
+        //Desafio005v2.Executar();
+        //Desafio006v2.Executar();
+        //Desafio007v2.Executar();
+        //Desafio008v2.Executar();
+        //Desafio009v2.Executar();
+        //Desafio010v2.Executar();
+
     }
 
     public static void ExecutarExemplo001()
@@ -114,53 +131,4 @@ public class Program
         Console.ReadLine();
     }
 
-    public static void ExecutarDesafio001()
-    {
-        Desafio001.BoasVindas();
-    }
-
-    public static void ExecutarDesafio002()
-    {
-        Desafio002.DataFormatada();
-    }
-
-    public static void ExecutarDesafio003()
-    {
-        Desafio003.Somar();
-    }
-
-    public static void ExecutarDesafio004()
-    {
-        Desafio004.DobroTriploRaiz();
-    }
-
-    public static void ExecutarDesafio005()
-    {
-        Desafio005.CalcularMedia();
-    }
-
-    public static void ExecutarDesafio006()
-    {
-        Desafio006.ConversorComprimento();
-    }
-
-    public static void ExecutarDesafio007()
-    {
-        Desafio007.Tabuada();
-    }
-
-    public static void ExecutarDesafio008()
-    {
-        Desafio008.Dolar();
-    }
-
-    public static void ExecutarDesafio009()
-    {
-        Desafio009.QtdTinta();
-    }
-
-    public static void ExecutarDesafio010()
-    {
-        Desafio010.Desconto();
-    }
 }

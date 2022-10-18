@@ -10,7 +10,7 @@ namespace EstudoConsoleApp.Desafios
     /// Desafio 002 – Crie um programa que leia o dia, o mês e ano de nascimento de uma pessoa e mostre uma mensagem 
     /// com a data formatada.
     /// </summary>
-    public static class Desafio002
+    public static class Desafio002v2
     {
         public static void Executar()
         {
@@ -21,9 +21,23 @@ namespace EstudoConsoleApp.Desafios
             Console.Write("E o ano que você nasceu: ");
             int ano = int.Parse(Console.ReadLine());
 
-            Console.WriteLine();
-            Console.WriteLine("Você nasceu na data: " + dia + "/" + mes + "/" + ano);
-
+            if (dia > 31 || dia < 1)
+            {
+                Console.Write("Favor digitar dia corretamente.");
+            }
+            else if (mes > 12 || mes < 1)
+            {
+                Console.Write("Favor digitar mês corretamente.");
+            }
+            else if (ano >= 2022 || ano < 1)
+            {
+                Console.Write("Favor digitar ano corretamente.");
+            }
+            else
+            {
+                Console.WriteLine();
+                Console.WriteLine("Você nasceu na data: " + dia + "/" + mes + "/" + ano);
+            }
         }
     }
 }
