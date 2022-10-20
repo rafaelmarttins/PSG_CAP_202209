@@ -17,6 +17,7 @@ namespace EstudoConsoleApp.Desafios
     {
         public static void Executar()
         {
+
             Console.Write("Favor digitar seu primeiro nome: ");
             string nome = Console.ReadLine();
 
@@ -27,9 +28,9 @@ namespace EstudoConsoleApp.Desafios
             Console.WriteLine();
             Console.WriteLine("Meu nome em minúsculas: {0}.", nome.ToLower());
             Console.WriteLine();
-            Console.WriteLine("Meu nome tem {0} letras.", nome.Replace(" ", "").Length);
+            Console.WriteLine("Meu nome tem {0} letras.", nome.Replace(" ", "").Trim().Length);
             Console.WriteLine();
-            Console.WriteLine("Meu nome primeiro nome tem {0} letras.", nome.IndexOf(""));
+            Console.WriteLine("Meu nome primeiro nome tem {0} letras.", nome.IndexOf(" "));
         }
     }
 }
