@@ -3,26 +3,32 @@
   <Class Name="EstoqueApp.Model.Categoria">
     <Position X="1" Y="4.5" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>ABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAA=</HashCode>
       <FileName>Model\Categoria.cs</FileName>
     </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Subcategorias" />
+    </ShowAsCollectionAssociation>
   </Class>
   <Class Name="EstoqueApp.Model.Subcategoria">
-    <Position X="3.5" Y="4.5" Width="2.25" />
+    <Position X="4.75" Y="4.5" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAgAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAIAAAAAAAgAAAAAAAAAAAAAAAgAAAAAAAAAAAACAA=</HashCode>
       <FileName>Model\Subcategoria.cs</FileName>
     </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Produtos" />
+    </ShowAsCollectionAssociation>
   </Class>
   <Class Name="EstoqueApp.Model.Produto">
-    <Position X="6.5" Y="4.5" Width="2" />
+    <Position X="9" Y="4.5" Width="2" />
     <TypeIdentifier>
       <HashCode>IAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Model\Produto.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="EstoqueApp.Model.BaseEstoque">
-    <Position X="3.5" Y="0.5" Width="2.25" />
+    <Position X="4.75" Y="0.5" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAABAAAAAQABAAEAAQEBAAABAAAABAAAAAAAAAAAAAA=</HashCode>
       <FileName>Model\BaseEstoque.cs</FileName>
