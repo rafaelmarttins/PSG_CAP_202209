@@ -24,7 +24,6 @@ namespace EstoqueApp.Model.RH
 
         private string uf;
 
-
         public int Id { get => id; set => id = value; }
         public string Logradouro { get => logradouro; set => logradouro = value; }
         public int Numero { get => numero; set => numero = value; }
@@ -35,7 +34,7 @@ namespace EstoqueApp.Model.RH
         public string Uf { get => uf; set => uf = value; }
 
         public Endereco()
-        {
+        { 
         }
 
         public Endereco(int id, string logradouro, int numero, string complemento, string bairro, string cep, string cidade, string uf)

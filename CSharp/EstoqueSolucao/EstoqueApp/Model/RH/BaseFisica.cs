@@ -18,5 +18,23 @@ namespace EstoqueApp.Model.RH
 
         protected string emailPessoal;
 
+        public string Cpf { get => cpf; set => cpf = value; }
+        public string Rg { get => rg; set => rg = value; }
+        public string Genero { get => genero; set => genero = value; }
+        public DateTime Nasc { get => nasc; set => nasc = value; }
+        public string EmailPessoal { get => emailPessoal; set => emailPessoal = value; }
+
+        public BaseFisica() : base()
+        {
+        }
+
+        public BaseFisica(int id, string cpf, string rg, string genero, DateTime nasc, string emailPessoal) : base(id)
+        {
+            this.cpf = cpf;
+            this.rg = rg;
+            this.genero = genero;
+            this.nasc = nasc;
+            this.emailPessoal = emailPessoal;
+        }
     }
 }
