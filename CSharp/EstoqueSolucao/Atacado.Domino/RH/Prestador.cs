@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EstoqueApp.Model.RH
+namespace Atacado.Domino.RH
 {
     public class Prestador : BaseJuridica
     {
@@ -16,8 +16,7 @@ namespace EstoqueApp.Model.RH
         public DateOnly DataContratoFinal { get => dataContratoFinal; set => dataContratoFinal = value; }
 
         public Prestador()
-        {
-        }
+        { }
 
         public Prestador(int id, string nome, string nomeFantasia, string razaoSocial, string cpnj, string inscricaoEstadual, DateTime fundacao, string emailCorporativo, DateOnly dataContratoInicial, DateOnly dataContratoFinal) : base(id, nome, nomeFantasia, razaoSocial, cpnj, inscricaoEstadual, fundacao, emailCorporativo)
         {

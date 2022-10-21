@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EstoqueApp.Model.RH
+namespace Atacado.Poco.RH
 {
     public abstract class BaseFisica : BasePessoa
     {
@@ -25,16 +25,6 @@ namespace EstoqueApp.Model.RH
         public string EmailPessoal { get => emailPessoal; set => emailPessoal = value; }
 
         public BaseFisica() : base()
-        {
-        }
-
-        public BaseFisica(int id, string cpf, string rg, string genero, DateTime nasc, string emailPessoal) : base(id)
-        {
-            this.cpf = cpf;
-            this.rg = rg;
-            this.genero = genero;
-            this.nasc = nasc;
-            this.emailPessoal = emailPessoal;
-        }
+        { }
     }
 }

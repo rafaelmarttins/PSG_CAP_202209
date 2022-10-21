@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EstoqueApp.Model.RH
+namespace Atacado.Domino.RH
 {
     public class Endereco
     {
@@ -34,8 +34,7 @@ namespace EstoqueApp.Model.RH
         public string Uf { get => uf; set => uf = value; }
 
         public Endereco()
-        { 
-        }
+        { }
 
         public Endereco(int id, string logradouro, int numero, string complemento, string bairro, string cep, string cidade, string uf)
         {

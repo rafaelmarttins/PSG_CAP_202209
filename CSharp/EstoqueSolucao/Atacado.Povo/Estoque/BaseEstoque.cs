@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EstoqueApp.Model.Estoque
+namespace Atacado.Poco.Estoque
 {
     public abstract class BaseEstoque
     {
@@ -30,14 +30,6 @@ namespace EstoqueApp.Model.Estoque
             this.descricao = descricao;
             this.ativo = ativo;
             this.dataInclusao = dataInclusao;
-        }
-
-        public void Imprimir()
-        {
-            Console.WriteLine("Codigo: {0}", this.codigo);
-            Console.WriteLine("Descrição: {0}", this.descricao);
-            Console.WriteLine("Ativo: {0}", this.ativo);
-            Console.WriteLine("Data de Inclusão: {0}", this.dataInclusao);
         }
     }
 }
