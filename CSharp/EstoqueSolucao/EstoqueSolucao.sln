@@ -15,11 +15,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02 - Modelo", "02 - Modelo"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03 - Arquitetura", "03 - Arquitetura", "{1EF5ED1E-8FF0-4F2C-A71D-EDD5743035A9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Atacado.Domino", "Atacado.Domino\Atacado.Domino.csproj", "{84838ABD-034A-4433-94C8-18891D7E4A06}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Atacado.Dominio", "Atacado.Domino\Atacado.Dominio.csproj", "{84838ABD-034A-4433-94C8-18891D7E4A06}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Atacado.Poco", "Atacado.Povo\Atacado.Poco.csproj", "{9B9F4CF2-F137-4807-83B3-2240726AC808}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Atacado.Poco", "Atacado.Povo\Atacado.Poco.csproj", "{9B9F4CF2-F137-4807-83B3-2240726AC808}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Atacado.DB.FakeDB", "Atacado.DB.FakeDB\Atacado.DB.FakeDB.csproj", "{F6D210AB-520C-4427-9587-5B6115E15007}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Atacado.DB.FakeDB", "Atacado.DB.FakeDB\Atacado.DB.FakeDB.csproj", "{F6D210AB-520C-4427-9587-5B6115E15007}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

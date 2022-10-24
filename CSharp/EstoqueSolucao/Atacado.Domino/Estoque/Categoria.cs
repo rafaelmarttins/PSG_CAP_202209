@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Atacado.Domino.Estoque
+namespace Atacado.Dominio.Estoque
 {
     public class Categoria : BaseEstoque
     {

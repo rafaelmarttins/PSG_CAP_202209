@@ -7,11 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="RH\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\Atacado.Domino\Atacado.Dominio.csproj" />
+    <Compile Remove="NewFolder\**" />
+    <EmbeddedResource Remove="NewFolder\**" />
+    <None Remove="NewFolder\**" />
   </ItemGroup>
 
 </Project>
