@@ -11,8 +11,4 @@
     <ProjectReference Include="..\Atacado.Domino\Atacado.Dominio.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="RH\" />
-  </ItemGroup>
-
 </Project>

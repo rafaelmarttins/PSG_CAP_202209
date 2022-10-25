@@ -1,10 +1,10 @@
-﻿using System;
+﻿using Atacado.Dominio.Estoque;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
-using Atacado.Dominio.Estoque;
 
 namespace Atacado.DB.FakeDB.Estoque
 {
@@ -29,5 +29,28 @@ namespace Atacado.DB.FakeDB.Estoque
         {
         }
 
+        public Categoria AddCategoria(Categoria instancia)
+        {
+            int novaChave = this.Categorias.Count + 1;
+            instancia.Codigo = novaChave;
+            this.Categorias.Add(instancia);
+            return instancia;
+        }
+
+        public Subcategoria AddSubcategoria(Subcategoria instancia)
+        {
+            int novaChave = this.Subcategorias.Count + 1;
+            instancia.Codigo = novaChave;
+            this.Subcategorias.Add(instancia);
+            return instancia;
+        }
+
+        public Produto AddProduto(Produto instancia)
+        {
+            int novaChave = this.Produtos.Count + 1;
+            instancia.Codigo = novaChave;
+            this.Produtos.Add(instancia);
+            return instancia;
+        }
     }
 }
