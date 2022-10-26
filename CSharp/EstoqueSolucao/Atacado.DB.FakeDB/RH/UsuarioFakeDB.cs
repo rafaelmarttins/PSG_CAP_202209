@@ -4,7 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Atacado.Dominio.Estoque;
-using Atacado.Domino.RH;
+using Atacado.Dominio.RH;
+
 
 namespace Atacado.DB.FakeDB.RH
 {
@@ -28,8 +29,8 @@ namespace Atacado.DB.FakeDB.RH
         private static void Carregar()
         {
             usuarios.Add(new Usuario(1, "rafael.martins", "992508", "Admin"));
-            usuarios.Add(new Usuario(2, "aline.souza", "258963", "Admin"));
-            usuarios.Add(new Usuario(3, "pedro.soares", "741258", "Admin"));
+            usuarios.Add(new Usuario(2, "aline.souza", "258963", "Client"));
+            usuarios.Add(new Usuario(3, "pedro.soares", "741258", "Client"));
             usuarios.Add(new Usuario(4, "joao.barreto", "852369", "Admin"));
             usuarios.Add(new Usuario(5, "tiago.silva", "852753", "Admin"));
         }

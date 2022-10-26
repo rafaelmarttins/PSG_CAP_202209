@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-namespace Atacado.Domino.RH
+namespace Atacado.Dominio.RH
 {
     public abstract class BasePessoa
     {

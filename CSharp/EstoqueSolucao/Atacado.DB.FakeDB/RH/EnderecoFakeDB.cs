@@ -1,4 +1,4 @@
-﻿using Atacado.Domino.RH;
+﻿using Atacado.Dominio.RH;
 using System;
 using System.Collections.Generic;
 using System.Linq;
