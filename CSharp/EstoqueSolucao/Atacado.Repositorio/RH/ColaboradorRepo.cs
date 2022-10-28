@@ -63,7 +63,7 @@ namespace Atacado.Repositorio.RH
             {
                 atu.Ctps = instancia.Ctps;
                 atu.Pis = instancia.Pis;
-                atu.TituloElitor = instancia.TituloElitor;
+                atu.TituloEleitor = instancia.TituloEleitor;
                 atu.Reservista = instancia.Reservista;
                 atu.EstadoCivil = instancia.EstadoCivil;
                 atu.NumDependentes = instancia.NumDependentes;

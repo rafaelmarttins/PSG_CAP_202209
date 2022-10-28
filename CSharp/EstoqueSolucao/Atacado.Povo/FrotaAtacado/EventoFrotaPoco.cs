@@ -14,17 +14,17 @@ namespace Atacado.Poco.FrotaAtacado
 
         private DateOnly dataFinal;
 
-        private string kmInicial;
+        private double kmInicial;
 
-        private string kmFinal;
+        private double kmFinal;
 
         private string motivoEvento;
 
         public string Condutor { get => condutor; set => condutor = value; }
         public DateOnly DataInicial { get => dataInicial; set => dataInicial = value; }
         public DateOnly DataFinal { get => dataFinal; set => dataFinal = value; }
-        public string KmInicial { get => kmInicial; set => kmInicial = value; }
-        public string KmFinal { get => kmFinal; set => kmFinal = value; }
+        public double KmInicial { get => kmInicial; set => kmInicial = value; }
+        public double KmFinal { get => kmFinal; set => kmFinal = value; }
         public string MotivoEvento { get => motivoEvento; set => motivoEvento = value; }
 
         public EventoFrotaPoco() : base()

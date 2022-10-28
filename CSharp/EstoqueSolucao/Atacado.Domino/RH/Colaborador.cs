@@ -12,7 +12,7 @@ namespace Atacado.Dominio.RH
 
         private string pis;
 
-        private string tituloElitor;
+        private string tituloEleitor;
 
         private bool reservista;
 
@@ -34,7 +34,7 @@ namespace Atacado.Dominio.RH
 
         public string Ctps { get => ctps; set => ctps = value; }
         public string Pis { get => pis; set => pis = value; }
-        public string TituloElitor { get => tituloElitor; set => tituloElitor = value; }
+        public string TituloEleitor { get => tituloEleitor; set => tituloEleitor = value; }
         public bool Reservista { get => reservista; set => reservista = value; }
         public string EstadoCivil { get => estadoCivil; set => estadoCivil = value; }
         public int NumDependentes { get => numDependentes; set => numDependentes = value; }
