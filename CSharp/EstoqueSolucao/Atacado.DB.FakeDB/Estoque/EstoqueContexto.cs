@@ -26,8 +26,7 @@ namespace Atacado.DB.FakeDB.Estoque
         }
 
         public EstoqueContexto()
-        {
-        }
+        { }
 
         public Categoria AddCategoria(Categoria instancia)
         {
