@@ -56,7 +56,7 @@ namespace Atacado.Dominio.RH
         {
             this.ctps = ctps;
             this.pis = pis;
-            this.tituloElitor = tituloElitor;
+            this.tituloEleitor = tituloElitor;
             this.reservista = reservista;
             this.estadoCivil = estadoCivil;
             this.numDependentes = numDependentes;

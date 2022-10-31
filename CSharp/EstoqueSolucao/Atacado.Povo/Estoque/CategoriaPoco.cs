@@ -1,14 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Atacado.Poco.Estoque
 {
-    public class CategoriaPoco : BaseEstoque
+    public class CategoriaPoco
     {
-        public CategoriaPoco() : base()
+        public int Codigo { get; set; }
+
+        public string Descricao { get; set; } = null!;
+
+        public DateTime DataInsert { get; set; }
+
+        public CategoriaPoco()
         { }
     }
 }
