@@ -8,6 +8,8 @@ using Atacado.Servico.Base;
 using Atacado.DB.EF.Database;
 using Atacado.Poco.Estoque;
 using Atacado.Repositorio.Estoque;
+using System.Linq.Expressions;
+
 
 namespace Atacado.Servico.Estoque
 {
@@ -30,17 +32,22 @@ namespace Atacado.Servico.Estoque
 
         public override List<CategoriaPoco> Browse()
         {
-            //List<Categoria> lista = this.repo.Read();
-            //List<CategoriaPoco> listaPoco = new List<CategoriaPoco>();
-            //foreach (Categoria item in lista)
-            //{
-            //    CategoriaPoco poco = this.ConvertTo(item);
-            //    listaPoco.Add(poco);
-            //}
-            //return listaPoco;
+            return this.Browse(null);
+        }
 
-            List<CategoriaPoco> listaPoco = this.repo.Read()
-                .Select(cat =>
+        public override List<CategoriaPoco> Browse(Expression<Func<Categoria, bool>> filtro = null)
+        {
+            List<CategoriaPoco> listPoco;
+            IQueryable<Categoria> query;
+            if(filtro == null)
+            {
+                query = this.repo.Read(null);
+            }
+            else
+            {
+                query = this.repo.Read(filtro);
+            }
+            listPoco = query.Select(cat =>
                     new CategoriaPoco()
                     {
                         Codigo = cat.Codigo,
@@ -48,9 +55,9 @@ namespace Atacado.Servico.Estoque
                         Ativo = cat.Ativo,
                         DataInsert = cat.DataInsert,
                     }
-                 )
-                .ToList();
-            return listaPoco;
+            )
+            .ToList();
+            return listPoco;
         }
 
         public override CategoriaPoco ConvertTo(Categoria dominio)

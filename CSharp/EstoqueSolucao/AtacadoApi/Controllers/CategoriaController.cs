@@ -6,12 +6,17 @@ using Atacado.DB.EF.Database;
 
 namespace AtacadoApi.Controllers
 {
+    /// <summary>
+    /// 
+    /// </summary>
     [Route("api/estoque/[controller]")]
     [ApiController]
     public class CategoriaController : ControllerBase
     {
         private CategoriaServico servico;
-
+        /// <summary>
+        /// 
+        /// </summary>
         public CategoriaController() : base()
         {
             this.servico = new CategoriaServico();
@@ -31,7 +36,7 @@ namespace AtacadoApi.Controllers
         /// Pesquisa o registro usando uma chave.
         /// </summary>
         /// <param name="codigo"> Chave de pesquisa. </param>
-        /// <returns>Registro localizado.</returns>
+        /// <returns> Registro localizado. </returns>
         [HttpGet("{codigo:int}")]
         public CategoriaPoco GetByID(int codigo)
         {
@@ -63,7 +68,7 @@ namespace AtacadoApi.Controllers
         /// <summary>
         /// Exclui um registro existente no recurso, utilizando um id.
         /// </summary>
-        /// <param name="codigo">Chave para localização. </param>
+        /// <param name="codigo"> Chave para localização. </param>
         /// <returns> Dado excluido por Id.</returns>
         [HttpDelete("{codigo:int}")]
         public CategoriaPoco DeleteById(int codigo)

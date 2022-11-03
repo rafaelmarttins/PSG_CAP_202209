@@ -6,12 +6,18 @@ using Atacado.DB.EF.Database;
 
 namespace AtacadoApi.Controllers
 {
+    /// <summary>
+    /// 
+    /// </summary>
     [Route("api/estoque/[controller]")]
     [ApiController]
     public class SubcategoriaController : ControllerBase
     {
         private SubcategoriaServico servico;
 
+        /// <summary>
+        /// 
+        /// </summary>
         public SubcategoriaController() : base()
         {
             this.servico = new SubcategoriaServico();
@@ -28,10 +34,10 @@ namespace AtacadoApi.Controllers
         }
 
         /// <summary>
-        /// Pesquisa o registro usando uma chave.
+        ///  Lista os registro usando a chave.
         /// </summary>
         /// <param name="codigo"> Chave de pesquisa. </param>
-        /// <returns>Registro localizado.</returns>
+        /// <returns> Registro localizado. </returns>
         [HttpGet("{codigo:int}")]
         public SubcategoriaPoco GetByID(int codigo)
         {
@@ -39,7 +45,18 @@ namespace AtacadoApi.Controllers
         }
 
         /// <summary>
-        /// Inclui um novo dado no registro.
+        /// Pesquisa o registro usando uma chave categoria.
+        /// </summary>
+        /// <param name="catid"> Chave de pesquisa. </param>
+        /// <returns> Registro localizado. </returns>
+        [HttpGet("PorCategoria/{catid:int}")]
+        public List<SubcategoriaPoco> GetByCategoria(int catid)
+        {
+            return this.servico.Browse(sub => sub.CodigoCategoria == catid).ToList();
+        }
+
+        /// <summary>
+        /// Inclui um novo dado na tabela.
         /// </summary>
         /// <param name="poco"> Dados que será incluido. </param>
         /// <returns> Dados incluido. </returns>
@@ -63,8 +80,8 @@ namespace AtacadoApi.Controllers
         /// <summary>
         /// Exclui um registro existente no recurso, utilizando um id.
         /// </summary>
-        /// <param name="codigo">Chave para localização. </param>
-        /// <returns> Dado excluido por Id.</returns>
+        /// <param name="codigo"> Chave para localização. </param>
+        /// <returns> Dado excluido por Id. </returns>
         [HttpDelete("{codigo:int}")]
         public SubcategoriaPoco DeleteById(int codigo)
         {
