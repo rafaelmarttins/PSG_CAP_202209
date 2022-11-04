@@ -33,7 +33,7 @@ namespace AtacadoApi.Controllers
         }
 
         /// <summary>
-        /// Pesquisa o registro usando uma chave.
+        /// Pesquisa o registro usando a chave de Categoria.
         /// </summary>
         /// <param name="codigo"> Chave de pesquisa. </param>
         /// <returns> Registro localizado. </returns>

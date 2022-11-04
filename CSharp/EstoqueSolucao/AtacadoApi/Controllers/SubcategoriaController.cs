@@ -34,7 +34,7 @@ namespace AtacadoApi.Controllers
         }
 
         /// <summary>
-        ///  Lista os registro usando a chave.
+        ///  Lista os registro usando a chave de SubCategoria.
         /// </summary>
         /// <param name="codigo"> Chave de pesquisa. </param>
         /// <returns> Registro localizado. </returns>
@@ -45,7 +45,7 @@ namespace AtacadoApi.Controllers
         }
 
         /// <summary>
-        /// Pesquisa o registro usando uma chave categoria.
+        /// Pesquisa o registro usando uma chave Categoria.
         /// </summary>
         /// <param name="catid"> Chave de pesquisa. </param>
         /// <returns> Registro localizado. </returns>

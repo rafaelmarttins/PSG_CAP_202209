@@ -34,10 +34,10 @@ namespace AtacadoApi.Controllers
         }
 
         /// <summary>
-        /// 
+        ///  Pesquisa o registro usando uma chave de Produto.
         /// </summary>
-        /// <param name="codigo"></param>
-        /// <returns></returns>
+        /// <param name="codigo"> Chave de pesquisa. </param>
+        /// <returns> Registro localizado. </returns>
         [HttpGet("{codigo:int}")]
         public ProdutoPoco GetByID(int codigo)
         {
