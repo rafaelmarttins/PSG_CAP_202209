@@ -28,8 +28,17 @@ namespace AtacadoApi.Controllers
         /// </summary>
         /// <returns> Todos os registros. </returns>
         [HttpGet]
-        public List<SubcategoriaPoco> GetAll()
+        public ActionResult<List<SubcategoriaPoco>> GetAll()
         {
+            try
+            {
+                List<SubcategoriaPoco> lista = this.servico.Browse();
+                return Ok(lista);
+            }
+            catch
+            {
+
+            }
             return this.servico.Browse();
         }
 

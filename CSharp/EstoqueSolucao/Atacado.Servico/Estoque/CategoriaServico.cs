@@ -8,6 +8,7 @@ using Atacado.Servico.Base;
 using Atacado.DB.EF.Database;
 using Atacado.Poco.Estoque;
 using Atacado.Repositorio.Estoque;
+using Atacado.Repositorio.Base;
 using System.Linq.Expressions;
 
 
@@ -17,15 +18,20 @@ namespace Atacado.Servico.Estoque
     {
         private CategoriaRepo repo;
 
+        private GenericRepository<Categoria> genrepo;
+
         public CategoriaServico() : base()
         {
             this.repo = new CategoriaRepo();
+
+            this.genrepo = new GenericRepository<Categoria>();
         }
 
         public override CategoriaPoco Add(CategoriaPoco poco)
         {
             Categoria nova = this.ConvertTo(poco);
-            Categoria criada = this.repo.Create(nova);
+            //Categoria criada = this.repo.Create(nova);
+            Categoria criada = this.genrepo.Insert(nova);
             CategoriaPoco criadaPoco = this.ConvertTo(criada);
             return criadaPoco;
         }
@@ -41,11 +47,13 @@ namespace Atacado.Servico.Estoque
             IQueryable<Categoria> query;
             if(filtro == null)
             {
-                query = this.repo.Read(null);
+                //query = this.repo.Read(null);
+                query = this.genrepo.Browseable(null);
             }
             else
             {
-                query = this.repo.Read(filtro);
+                //query = this.repo.Read(filtro);
+                query = this.genrepo.Browseable(filtro);
             }
             listPoco = query.Select(cat =>
                     new CategoriaPoco()
@@ -84,14 +92,16 @@ namespace Atacado.Servico.Estoque
 
         public override CategoriaPoco Delete(int chave)
         {
-            Categoria del = this.repo.Delete(chave);
+            //Categoria del = this.repo.Delete(chave);
+            Categoria del = this.genrepo.Delete(chave);
             CategoriaPoco delPoco = this.ConvertTo(del);
             return delPoco;
         }
 
         public override CategoriaPoco Delete(CategoriaPoco poco)
         {
-            Categoria del = this.repo.Delete(ConvertTo(poco));
+            //Categoria del = this.repo.Delete(ConvertTo(poco));
+            Categoria del = this.genrepo.Delete(poco.Codigo);
             CategoriaPoco delPoco = this.ConvertTo(del);
             return delPoco;
         }
@@ -99,14 +109,16 @@ namespace Atacado.Servico.Estoque
         public override CategoriaPoco Edit(CategoriaPoco poco)
         {
             Categoria editada = this.ConvertTo(poco);
-            Categoria alterada = this.repo.Update(editada);
+            //Categoria alterada = this.repo.Update(editada);
+            Categoria alterada = this.genrepo.Update(editada);
             CategoriaPoco alteradaPoco = this.ConvertTo(alterada);
             return alteradaPoco;
         }
 
         public override CategoriaPoco Read(int chave)
         {
-            Categoria lida = this.repo.Read(chave);
+            //Categoria lida = this.repo.Read(chave);
+            Categoria lida = this.genrepo.GetById(chave);
             CategoriaPoco lidaPoco = this.ConvertTo(lida);
             return lidaPoco;
         }
