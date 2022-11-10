@@ -12,41 +12,37 @@ using System.Linq.Expressions;
 
 namespace Atacado.Servico.Estoque
 {
-    public class ProdutoServico : BaseServico<ProdutoPoco, Produto>
+    public class ProdutoServico : GenericService<Produto, ProdutoPoco>
     {
-        private GenericRepository<Produto> genrepo;
-
-        public ProdutoServico() : base()
+        public override ProdutoPoco ConverterPara(Produto obj)
         {
-            this.genrepo = new GenericRepository<Produto>();
-        }
-
-        public override ProdutoPoco Add(ProdutoPoco poco)
-        {
-            Produto nova = this.ConvertTo(poco);
-            Produto criada = this.genrepo.Insert(nova);
-            ProdutoPoco criadaPoco = this.ConvertTo(criada);
-            return criadaPoco;
-        }
-
-        public override List<ProdutoPoco> Browse()
-        {
-            return this.Browse(null);
-        }
-
-        public override List<ProdutoPoco> Browse(Expression<Func<Produto, bool>> filtro = null)
-        {
-            List<ProdutoPoco> listPoco;
-            IQueryable<Produto> query;
-            if (filtro == null)
+            return new ProdutoPoco()
             {
-                query = this.genrepo.Browseable(null);
-            }
-            else
+                Codigo = obj.Codigo,
+                Descricao = obj.Descricao,
+                Ativo = obj.Ativo,
+                DataInsert = obj.DataInsert,
+                CodigoCategoria = obj.CodigoCategoria,
+                CodigoSubcategoria = obj.CodigoSubcategoria
+            };
+        }
+
+        public override Produto ConverterPara(ProdutoPoco obj)
+        {
+            return new Produto()
             {
-                query = this.genrepo.Browseable(filtro);
-            }
-            listPoco = query.Select(pro =>
+                Codigo = obj.Codigo,
+                Descricao = obj.Descricao,
+                Ativo = obj.Ativo,
+                DataInsert = obj.DataInsert,
+                CodigoCategoria = obj.CodigoCategoria,
+                CodigoSubcategoria = obj.CodigoSubcategoria
+            };
+        }
+
+        public override List<ProdutoPoco> ConverterPara(IQueryable<Produto> query)
+        {
+            return query.Select(pro =>
                     new ProdutoPoco()
                     {
                         Codigo = pro.Codigo,
@@ -58,61 +54,46 @@ namespace Atacado.Servico.Estoque
                     }
             )
             .ToList();
-            return listPoco;
         }
-        public override ProdutoPoco ConvertTo(Produto dominio)
+
+        public override List<ProdutoPoco> Consultar(Expression<Func<Produto, bool>>? predicate = null)
         {
-            return new ProdutoPoco()
+            IQueryable<Produto> query;
+            if (predicate == null)
             {
-                Codigo = dominio.Codigo,
-                Descricao = dominio.Descricao,
-                Ativo = dominio.Ativo,
-                DataInsert = dominio.DataInsert,
-                CodigoCategoria = dominio.CodigoCategoria,
-                CodigoSubcategoria = dominio.CodigoSubcategoria
-            };
-        }
-
-        public override Produto ConvertTo(ProdutoPoco poco)
-        {
-            return new Produto()
+                query = this.genrepo.Browseable(null);
+            }
+            else
             {
-                Codigo = poco.Codigo,
-                Descricao = poco.Descricao,
-                Ativo = poco.Ativo,
-                DataInsert = poco.DataInsert,
-                CodigoCategoria = poco.CodigoCategoria,
-                CodigoSubcategoria = poco.CodigoSubcategoria
-            };
+                query = this.genrepo.Browseable(predicate);
+            }
+            List<ProdutoPoco> listaPoco = query.Select(pro =>
+                    new ProdutoPoco()
+                    {
+                        Codigo = pro.Codigo,
+                        Descricao = pro.Descricao,
+                        Ativo = pro.Ativo,
+                        DataInsert = pro.DataInsert,
+                        CodigoCategoria = pro.CodigoCategoria,
+                        CodigoSubcategoria = pro.CodigoSubcategoria
+                    }
+            )
+            .ToList();
+            return listaPoco;
         }
 
-        public override ProdutoPoco Delete(int chave)
+        public override List<ProdutoPoco> Listar(int? take = null, int? skip = null)
         {
-            Produto del = this.genrepo.Delete(chave);
-            ProdutoPoco delPoco = this.ConvertTo(del);
-            return delPoco;
-        }
-
-        public override ProdutoPoco Delete(ProdutoPoco poco)
-        {
-            Produto del = this.genrepo.Delete(ConvertTo(poco));
-            ProdutoPoco delPoco = this.ConvertTo(del);
-            return delPoco;
-        }
-
-        public override ProdutoPoco Edit(ProdutoPoco poco)
-        {
-            Produto editada = this.ConvertTo(poco);
-            Produto alterada = this.genrepo.Update(editada);
-            ProdutoPoco alteradaPoco = this.ConvertTo(alterada);
-            return alteradaPoco;
-        }
-
-        public override ProdutoPoco Read(int chave)
-        {
-            Produto lida = this.genrepo.GetById(chave);
-            ProdutoPoco lidaPoco = this.ConvertTo(lida);
-            return lidaPoco;
+            IQueryable<Produto> query;
+            if (skip == null)
+            {
+                query = this.genrepo.GetAll();
+            }
+            else
+            {
+                query = this.genrepo.GetAll(take, skip);
+            }
+            return ConverterPara(query);
         }
     }
 }
