@@ -129,7 +129,7 @@ namespace AtacadoApi.Controllers
         {
             try
             {
-                CategoriaPoco delPoco = this.servico.Excluir(poco);
+                CategoriaPoco delPoco = this.servico.Excluir(poco.Codigo);
                 return Ok(delPoco);
             }
             catch (Exception ex)
