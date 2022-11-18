@@ -10,18 +10,18 @@ namespace AtacadoApi.Controllers
     [ApiController]
     public class RebanhoController : ControllerBase
     {
-        private RebanhoService servico;
+        private RebanhoServico servico;
 
         public RebanhoController()
         {
-            this.servico = new RebanhoService();
+            this.servico = new RebanhoServico();
         }
 
         /// <summary>
         /// Lista todos os registros do recurso.
         /// </summary>
-        /// <param name="take"> Onde inicia os resultados da pesquisa </param>
-        /// <param name="skip"> Quantos registros serão retornados </param>
+        /// <param name="take"> Onde inicia os resultados da pesquisa. </param>
+        /// <param name="skip"> Quantos registros serão retornados. </param>
         /// <returns> Todos os registros. </returns>
         [HttpGet]
         public ActionResult<List<RebanhoPoco>> GetAll(int? take = null, int? skip = null)
@@ -29,6 +29,44 @@ namespace AtacadoApi.Controllers
             try
             {
                 List<RebanhoPoco> lista = this.servico.Listar(take, skip);
+                return Ok(lista);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.ToString());
+            }
+        }
+
+        /// <summary>
+        ///  Lista todos os registros de Rebanho por Municipio.
+        /// </summary>
+        /// <param name="muncodigo"> Chave de pesquisa. </param>
+        /// <returns> Registro localizado. </returns>
+        [HttpGet("PorMunicipio/{muncodigo:int}")]
+        public ActionResult<List<RebanhoPoco>> GetPorMunicipio(int muncodigo)
+        {
+            try
+            {
+                List<RebanhoPoco> lista = this.servico.Consultar(mun => mun.CodigoMunicipio == muncodigo).ToList();
+                return Ok(lista);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.ToString());
+            }
+        }
+
+        /// <summary>
+        /// Listar todos os registros de Rebanho por Tipo Rebanho.
+        /// </summary>
+        /// <param name="tipcodigo"> Chave de pesquisa. </param>
+        /// <returns> Registro localizado. </returns>
+        [HttpGet("PorTipoRebanho/{tipcodigo:int}")]
+        public ActionResult<List<RebanhoPoco>> GetPorTipoRebanho(int tipcodigo)
+        {
+            try
+            {
+                List<RebanhoPoco> lista = this.servico.Consultar(tip => tip.CodigoTipoRebanho == tipcodigo).ToList();
                 return Ok(lista);
             }
             catch (Exception ex)

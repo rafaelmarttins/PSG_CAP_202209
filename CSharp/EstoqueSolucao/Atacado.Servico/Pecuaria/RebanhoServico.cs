@@ -12,7 +12,7 @@ using Atacado.Poco.Estoque;
 
 namespace Atacado.Servico.Pecuaria
 {
-    public class RebanhoService : GenericService<Rebanho, RebanhoPoco>
+    public class RebanhoServico : GenericService<Rebanho, RebanhoPoco>
     {
         public override List<RebanhoPoco> ConverterPara(IQueryable<Rebanho> query)
         {
@@ -45,21 +45,7 @@ namespace Atacado.Servico.Pecuaria
             {
                 query = this.genrepo.Browseable(predicate);
             }
-            List<RebanhoPoco> listaPoco = query.Select(reb =>
-                    new RebanhoPoco()
-                    {
-                        CodigoRebanho = reb.CodigoRebanho,
-                        AnoRef = reb.AnoRef,
-                        CodigoMunicipio = reb.CodigoMunicipio,
-                        CodigoTipoRebanho = reb.CodigoTipoRebanho,
-                        TipoRebanho = reb.TipoRebanho,
-                        Quantidade = reb.Quantidade,
-                        Situacao = reb.Situacao,
-                        DataInclusao = reb.DataInclusao
-                    }
-            )
-            .ToList();
-            return listaPoco;
+            return this.ConverterPara(query);
         }
 
         public override List<RebanhoPoco> Listar(int? take = null, int? skip = null)

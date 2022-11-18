@@ -11,7 +11,7 @@ using System.Linq.Expressions;
 
 namespace Atacado.Servico.Pecuaria
 {
-    public class TipoRebanhoService : GenericService<TipoRebanho, TipoRebanhoPoco>
+    public class TipoRebanhoServico : GenericService<TipoRebanho, TipoRebanhoPoco>
     {
         public override List<TipoRebanhoPoco> Consultar(Expression<Func<TipoRebanho, bool>>? predicate = null)
         {

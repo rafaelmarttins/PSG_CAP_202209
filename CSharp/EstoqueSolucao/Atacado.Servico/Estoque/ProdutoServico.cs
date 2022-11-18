@@ -41,19 +41,7 @@ namespace Atacado.Servico.Estoque
             {
                 query = this.genrepo.Browseable(predicate);
             }
-            List<ProdutoPoco> listaPoco = query.Select(pro =>
-                    new ProdutoPoco()
-                    {
-                        Codigo = pro.Codigo,
-                        Descricao = pro.Descricao,
-                        Ativo = pro.Ativo,
-                        DataInsert = pro.DataInsert,
-                        CodigoCategoria = pro.CodigoCategoria,
-                        CodigoSubcategoria = pro.CodigoSubcategoria
-                    }
-            )
-            .ToList();
-            return listaPoco;
+             return this.ConverterPara(query);
         }
 
         public override List<ProdutoPoco> Listar(int? take = null, int? skip = null)

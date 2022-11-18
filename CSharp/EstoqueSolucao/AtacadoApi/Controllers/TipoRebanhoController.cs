@@ -9,11 +9,11 @@ namespace AtacadoApi.Controllers
     [ApiController]
     public class TipoRebanhoController : ControllerBase
     {
-        private TipoRebanhoService servico;
+        private TipoRebanhoServico servico;
 
         public TipoRebanhoController()
         {
-            this.servico = new TipoRebanhoService();
+            this.servico = new TipoRebanhoServico();
         }
 
         /// <summary>
