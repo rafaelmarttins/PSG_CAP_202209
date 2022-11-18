@@ -95,6 +95,26 @@ namespace AtacadoApi.Controllers
         }
 
         /// <summary>
+        /// Pesquisa o registro usando uma chave de Tipo Rebanho e Municipio.
+        /// </summary>
+        /// <param name="tipcodigo"> Chave de pesquisa. </param>
+        /// <param name="muncodigo"> Chave de pesquisa. </param>
+        /// <returns> Registro localizado. </returns>
+        [HttpGet("PorTipoRebanho/{tipcodigo:int}/PorMunicipio/{muncodigo:int}")]
+        public ActionResult<List<RebanhoPoco>> GetByTipoRebanhoByMunicipio(int tipcodigo, int muncodigo)
+        {
+            try
+            {
+                List<RebanhoPoco> lista = this.servico.Consultar(reb => (reb.CodigoTipoRebanho == tipcodigo) && (reb.CodigoMunicipio == muncodigo)).ToList();
+                return Ok(lista);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.ToString());
+            }
+        }
+
+        /// <summary>
         /// Inclui um novo dado na tabela.
         /// </summary>
         /// <param name="poco"> Dados que será incluido. </param>

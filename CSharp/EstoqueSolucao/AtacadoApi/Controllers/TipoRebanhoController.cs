@@ -19,15 +19,13 @@ namespace AtacadoApi.Controllers
         /// <summary>
         /// Lista todos os registros do recurso.
         /// </summary>
-        /// <param name="take"> Onde inicia os resultados da pesquisa </param>
-        /// <param name="skip"> Quantos registros serão retornados </param>
         /// <returns> Todos os registros. </returns>
         [HttpGet]
-        public ActionResult<List<TipoRebanhoPoco>> GetAll(int? take = null, int? skip = null)
+        public ActionResult<List<TipoRebanhoPoco>> GetAll()
         {
             try
             {
-                List<TipoRebanhoPoco> lista = this.servico.Listar(take, skip);
+                List<TipoRebanhoPoco> lista = this.servico.Listar();
                 return Ok(lista);
             }
             catch (Exception ex)
