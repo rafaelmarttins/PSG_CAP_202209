@@ -8,13 +8,11 @@ namespace Atacado.DB.EF.Database
     public partial class ProjetoAcademiaContext : DbContext
     {
         public ProjetoAcademiaContext()
-        {
-        }
+        { }
 
         public ProjetoAcademiaContext(DbContextOptions<ProjetoAcademiaContext> options)
             : base(options)
-        {
-        }
+        { }
 
         public virtual DbSet<Categoria> Categorias { get; set; } = null!;
         public virtual DbSet<Cliente> Clientes { get; set; } = null!;
@@ -32,11 +30,10 @@ namespace Atacado.DB.EF.Database
         //Criado pelo Desenvolvedor.
 
         public virtual DbSet<Rebanho> Rebanhos { get; set; } = null!;
-
         public virtual DbSet<TipoRebanho> TipoRebanhos { get; set; } = null!;
 
-
         //Criado pelo Desenvolvedor.
+
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -46,6 +43,8 @@ namespace Atacado.DB.EF.Database
                 optionsBuilder.UseSqlServer("Data Source=psgs0071.psg.local;Initial Catalog=Academia;User=Academia;Password=@cadem1@555;");
             }
         }
+
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -154,7 +153,6 @@ namespace Atacado.DB.EF.Database
                 entity.Property(e => e.Situacao).HasDefaultValueSql("((1))");
             });
 
-
             modelBuilder.Entity<TipoRebanho>(entity =>
             {
                 entity.Property(e => e.DataInclusao).HasDefaultValueSql("(getdate())");
@@ -162,8 +160,10 @@ namespace Atacado.DB.EF.Database
                 entity.Property(e => e.Situacao).HasDefaultValueSql("((1))");
             });
 
-
             //Criado pelo Desenvolvedor.
+
+
+
 
 
             OnModelCreatingPartial(modelBuilder);

@@ -16,6 +16,7 @@ namespace AtacadoApi.Controllers
     public class CategoriaController : ControllerBase
     {
         private CategoriaServico servico;
+
         /// <summary>
         /// 
         /// </summary>

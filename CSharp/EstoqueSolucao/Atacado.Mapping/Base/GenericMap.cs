@@ -18,7 +18,7 @@ namespace Atacado.Mapping.Base
             MapperConfiguration? configuration = new MapperConfiguration(cfg =>
             {
                 cfg.CreateMap<TDominio, TPoco>();
-                cfg.CreateMap<TPoco, TPoco>();
+                cfg.CreateMap<TPoco, TDominio>();
             });
 
             this.Mapping = configuration.CreateMapper();

@@ -15,6 +15,7 @@ namespace AtacadoApi.Controllers
     public class ProdutoController : ControllerBase
     {
         private ProdutoServico servico;
+
         /// <summary>
         /// 
         /// </summary>

@@ -16,5 +16,8 @@ namespace Atacado.Poco.Pecuaria
         public DateTime? DataInclusao { get; set; }
         public DateTime? DataAlteracao { get; set; }
         public DateTime? DataExclusao { get; set; }
+
+        public TipoRebanhoPoco()
+        { }
     }
 }

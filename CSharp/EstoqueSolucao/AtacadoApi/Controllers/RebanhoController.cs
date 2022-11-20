@@ -6,12 +6,18 @@ using Atacado.Poco.Estoque;
 
 namespace AtacadoApi.Controllers
 {
+    /// <summary>
+    /// 
+    /// </summary>
     [Route("api/pecuaria/[controller]")]
     [ApiController]
     public class RebanhoController : ControllerBase
     {
         private RebanhoServico servico;
 
+        /// <summary>
+        /// 
+        /// </summary>
         public RebanhoController()
         {
             this.servico = new RebanhoServico();
@@ -29,6 +35,25 @@ namespace AtacadoApi.Controllers
             try
             {
                 List<RebanhoPoco> lista = this.servico.Listar(take, skip);
+                return Ok(lista);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.ToString());
+            }
+        }
+
+        /// <summary>
+        /// Pesquisa o registro usando uma chave de Rebanho.
+        /// </summary>
+        /// <param name="codigo"> Chave de pesquisa. </param>
+        /// <returns> Registro localizado. </returns>
+        [HttpGet("{codigo:int}")]
+        public ActionResult<RebanhoPoco> GetByID(int codigo)
+        {
+            try
+            {
+                RebanhoPoco lista = this.servico.PesquisarPelaChave(codigo);
                 return Ok(lista);
             }
             catch (Exception ex)
@@ -67,25 +92,6 @@ namespace AtacadoApi.Controllers
             try
             {
                 List<RebanhoPoco> lista = this.servico.Consultar(tip => tip.CodigoTipoRebanho == tipcodigo).ToList();
-                return Ok(lista);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.ToString());
-            }
-        }
-
-        /// <summary>
-        /// Pesquisa o registro usando uma chave de Rebanho.
-        /// </summary>
-        /// <param name="codigo"> Chave de pesquisa. </param>
-        /// <returns> Registro localizado. </returns>
-        [HttpGet("{codigo:int}")]
-        public ActionResult<RebanhoPoco> GetByID(int codigo)
-        {
-            try
-            {
-                RebanhoPoco lista = this.servico.PesquisarPelaChave(codigo);
                 return Ok(lista);
             }
             catch (Exception ex)

@@ -9,25 +9,15 @@ namespace Atacado.Poco.Pecuaria
 {
     public class RebanhoPoco
     {
-
         public int CodigoRebanho { get; set; }
-
         public int AnoRef { get; set; }
-
         public int CodigoMunicipio { get; set; }
-
         public int CodigoTipoRebanho { get; set; }
-
         public string TipoRebanho { get; set; } = null!;
-
         public int? Quantidade { get; set; }
-
         public bool? Situacao { get; set; }
-
         public DateTime? DataInclusao { get; set; }
-
         public DateTime? DataAlteracao { get; set; }
-
         public DateTime? DataExclusao { get; set; }
 
         public RebanhoPoco()

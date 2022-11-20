@@ -5,12 +5,18 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace AtacadoApi.Controllers
 {
+    /// <summary>
+    /// 
+    /// </summary>
     [Route("api/pecuaria/[controller]")]
     [ApiController]
     public class TipoRebanhoController : ControllerBase
     {
         private TipoRebanhoServico servico;
 
+        /// <summary>
+        /// 
+        /// </summary>
         public TipoRebanhoController()
         {
             this.servico = new TipoRebanhoServico();
