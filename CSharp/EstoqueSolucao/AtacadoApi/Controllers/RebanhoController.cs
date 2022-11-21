@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Atacado.Poco.Pecuaria;
 using Atacado.Servico.Pecuaria;
 using Atacado.Poco.Estoque;
+using Atacado.DB.EF.Database;
 
 namespace AtacadoApi.Controllers
 {
@@ -18,9 +19,9 @@ namespace AtacadoApi.Controllers
         /// <summary>
         /// 
         /// </summary>
-        public RebanhoController()
+        public RebanhoController(ProjetoAcademiaContext context) : base()
         {
-            this.servico = new RebanhoServico();
+            this.servico = new RebanhoServico(context);
         }
 
         /// <summary>

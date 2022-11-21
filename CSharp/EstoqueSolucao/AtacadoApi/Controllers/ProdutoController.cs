@@ -19,9 +19,9 @@ namespace AtacadoApi.Controllers
         /// <summary>
         /// 
         /// </summary>
-        public ProdutoController() : base()
+        public ProdutoController(ProjetoAcademiaContext context) : base()
         {
-            this.servico = new ProdutoServico();
+            this.servico = new ProdutoServico(context);
         }
 
         /// <summary>

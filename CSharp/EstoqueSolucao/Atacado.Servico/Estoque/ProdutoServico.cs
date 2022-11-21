@@ -14,6 +14,10 @@ namespace Atacado.Servico.Estoque
 {
     public class ProdutoServico : GenericService<Produto, ProdutoPoco>
     {
+
+        public ProdutoServico(ProjetoAcademiaContext context) : base(context)
+        { }
+
         public override List<ProdutoPoco> ConverterPara(IQueryable<Produto> query)
         {
             return query.Select(pro =>
@@ -41,7 +45,7 @@ namespace Atacado.Servico.Estoque
             {
                 query = this.genrepo.Browseable(predicate);
             }
-             return this.ConverterPara(query);
+            return this.ConverterPara(query);
         }
 
         public override List<ProdutoPoco> Listar(int? take = null, int? skip = null)

@@ -20,9 +20,9 @@ namespace AtacadoApi.Controllers
         /// <summary>
         /// 
         /// </summary>
-        public SubcategoriaController() : base()
+        public SubcategoriaController(ProjetoAcademiaContext context) : base()
         {
-            this.servico = new SubcategoriaServico();
+            this.servico = new SubcategoriaServico(context);
         }
 
         /// <summary>

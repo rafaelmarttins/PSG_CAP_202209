@@ -1,4 +1,5 @@
-﻿using Atacado.Poco.Pecuaria;
+﻿using Atacado.DB.EF.Database;
+using Atacado.Poco.Pecuaria;
 using Atacado.Servico.Pecuaria;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -17,9 +18,9 @@ namespace AtacadoApi.Controllers
         /// <summary>
         /// 
         /// </summary>
-        public TipoRebanhoController()
+        public TipoRebanhoController(ProjetoAcademiaContext context) : base()
         {
-            this.servico = new TipoRebanhoServico();
+            this.servico = new TipoRebanhoServico(context);
         }
 
         /// <summary>
