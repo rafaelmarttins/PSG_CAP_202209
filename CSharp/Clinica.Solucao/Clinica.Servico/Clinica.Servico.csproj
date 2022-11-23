@@ -23,6 +23,7 @@
     <ProjectReference Include="..\Clinica.Dominio.EF\Clinica.Dominio.EF.csproj" />
     <ProjectReference Include="..\Clinica.Mapping\Clinica.Mapping.csproj" />
     <ProjectReference Include="..\Clinica.Poco\Clinica.Poco.csproj" />
+    <ProjectReference Include="..\Clinica.Repositorio\Clinica.Repositorio.csproj" />
     <ProjectReference Include="..\ClinicaRepositorio\Clinica.Repositorio.csproj" />
   </ItemGroup>
 
