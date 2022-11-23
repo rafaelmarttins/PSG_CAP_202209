@@ -1,0 +1,29 @@
+﻿using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Clinica.Dominio.EF
+{
+    [Table("Profissao", Schema = "dbo")]
+    public partial class Profissao
+    {
+        [Key]
+        public int CodigoProfissao { get; set; }
+
+        [Column(name: "Descricao")]
+        [Unicode(false)]
+        public string Descricao { get; set; } = null!;
+
+        [Column(name: "DataInsert", TypeName = "datetime")]
+        public DateTime? DataInclusao { get; set; }
+
+        [Column(name: "Ativo")]
+        [Unicode(false)]
+        public bool? Situacao { get; set; }
+    }
+}

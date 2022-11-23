@@ -3,6 +3,7 @@ using Clinica.Poco;
 using Clinica.Servico.Clinica;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System;
 
 namespace ClinicaApi.Controllers
 {
@@ -11,30 +12,31 @@ namespace ClinicaApi.Controllers
     /// </summary>
     [Route("api/clinica/[controller]")]
     [ApiController]
-    public class PacienteController : ControllerBase
+    public class AgendaController : ControllerBase
     {
-        private PacienteServico servico;
+        private AgendaServico servico;
 
         /// <summary>
         /// 
         /// </summary>
-        public PacienteController(ClinicaContext context) : base()
+        /// <param name="context"></param>
+        public AgendaController(ClinicaContext context) : base()
         {
-            this.servico = new PacienteServico(context);
+            this.servico = new AgendaServico(context);
         }
 
         /// <summary>
-        /// Lista todos os registros da tabela Paciente.
+        /// Lista todos os registros da tabela Agenda.
         /// </summary>
         /// <param name="take"> Onde inicia os resultados da pesquisa. </param>
         /// <param name="skip"> Quantos registros serão retornados. </param>
         /// <returns> Todos os registros. </returns>
         [HttpGet]
-        public ActionResult<List<PacientePoco>> GetAll(int? take = null, int? skip = null)
+        public ActionResult<List<AgendaPoco>> GetAll(int? take = null, int? skip = null)
         {
             try
             {
-                List<PacientePoco> lista = this.servico.Listar(take, skip);
+                List<AgendaPoco> lista = this.servico.Listar(take, skip);
                 return Ok(lista);
             }
             catch (Exception ex)
@@ -44,16 +46,36 @@ namespace ClinicaApi.Controllers
         }
 
         /// <summary>
-        /// Listar todos os registros da tabela Paciente por código de Profissão.
+        /// Listar todos os registros da tabela Agenda por código de Paciente.
         /// </summary>
-        /// <param name="procodigo"> Chave de pesquisa. </param>
+        /// <param name="paccodigo"> Chave de pesquisa. </param>
         /// <returns> Registro localizado. </returns>
-        [HttpGet("PorProfisao/{procodigo:int}")]
-        public ActionResult<List<PacientePoco>> GetByProfissao(int procodigo)
+        [HttpGet("PorPaciente/{paccodigo:int}")]
+        public ActionResult<List<AgendaPoco>> GetByPaciente(int paccodigo)
         {
             try
             {
-                List<PacientePoco> listaPoco = this.servico.Consultar(pac => pac.CodigoProfissao == procodigo).ToList();
+                List<AgendaPoco> listaPoco = this.servico.Consultar(age => age.CodigoPaciente == paccodigo).ToList();
+                return Ok(listaPoco);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.ToString());
+            }
+        }
+
+
+        /// <summary>
+        /// Listar todos os registros da tabela Agenda por código de Consulta e Ano.
+        /// </summary>
+        /// <param name="concodigo"> Chave de pesquisa. </param>
+        /// <returns> Registro localizado. </returns>
+        [HttpGet("PorConsulta/{concodigo:int}/PorAno/{ano:int}")]
+        public ActionResult<List<AgendaPoco>> GetByConsultaByAno(int concodigo, int ano)
+        {
+            try
+            {
+                List<AgendaPoco> listaPoco = this.servico.Consultar(age => (age.CodigoConsulta == concodigo) && (age.Ano == ano)).ToList();
                 return Ok(listaPoco);
             }
             catch (Exception ex)
@@ -63,16 +85,16 @@ namespace ClinicaApi.Controllers
         }
 
         /// <summary>
-        ///  Lista os registro usando a chave de Paciente.
+        ///  Lista os registro usando a chave da Agenda.
         /// </summary>
         /// <param name="chave"> Chave de pesquisa. </param>
         /// <returns> Registro localizado. </returns>
         [HttpGet("{chave:int}")]
-        public ActionResult<PacientePoco> GetById(int chave)
+        public ActionResult<AgendaPoco> GetById(int chave)
         {
             try
             {
-                PacientePoco poco = this.servico.PesquisarPelaChave(chave);
+                AgendaPoco poco = this.servico.PesquisarPelaChave(chave);
                 return Ok(poco);
             }
             catch (Exception ex)
@@ -87,11 +109,11 @@ namespace ClinicaApi.Controllers
         /// <param name="poco"> Dados que será incluido. </param>
         /// <returns> Dados incluido. </returns>
         [HttpPost]
-        public ActionResult<PacientePoco> Post([FromBody] PacientePoco poco)
+        public ActionResult<AgendaPoco> Post([FromBody] AgendaPoco poco)
         {
             try
             {
-                PacientePoco novoPoco = this.servico.Inserir(poco);
+                AgendaPoco novoPoco = this.servico.Inserir(poco);
                 return Ok(novoPoco);
             }
             catch (Exception ex)
@@ -106,11 +128,11 @@ namespace ClinicaApi.Controllers
         /// <param name="poco"> Altera o dado selecionado. </param>
         /// <returns> Altera o dado selecionado. </returns>
         [HttpPut]
-        public ActionResult<PacientePoco> Put([FromBody] PacientePoco poco)
+        public ActionResult<AgendaPoco> Put([FromBody] AgendaPoco poco)
         {
             try
             {
-                PacientePoco novoPoco = this.servico.Alterar(poco);
+                AgendaPoco novoPoco = this.servico.Alterar(poco);
                 return Ok(novoPoco);
             }
             catch (Exception ex)
@@ -125,11 +147,11 @@ namespace ClinicaApi.Controllers
         /// <param name="chave"> Chave para localização. </param>
         /// <returns> Dado excluido por Id. </returns>
         [HttpDelete("{chave:int}")]
-        public ActionResult<PacientePoco> DeleteById(int chave)
+        public ActionResult<AgendaPoco> DeleteById(int chave)
         {
             try
             {
-                PacientePoco poco = this.servico.Excluir(chave);
+                AgendaPoco poco = this.servico.Excluir(chave);
                 return Ok(poco);
             }
             catch (Exception ex)
@@ -144,11 +166,11 @@ namespace ClinicaApi.Controllers
         /// <param name="poco"> Instancia a ser informada. </param>
         /// <returns> Dado excluido por Instancia. </returns>
         [HttpDelete]
-        public ActionResult<PacientePoco> Delete([FromBody] PacientePoco poco)
+        public ActionResult<AgendaPoco> Delete([FromBody] AgendaPoco poco)
         {
             try
             {
-                PacientePoco novoPoco = this.servico.Excluir(poco.CodigoPaciente);
+                AgendaPoco novoPoco = this.servico.Excluir(poco.CodigoAgenda);
                 return Ok(novoPoco);
             }
             catch (Exception ex)

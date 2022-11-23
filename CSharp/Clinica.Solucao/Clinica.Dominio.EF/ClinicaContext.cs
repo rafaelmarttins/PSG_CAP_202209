@@ -10,7 +10,11 @@ namespace Clinica.Dominio.EF
 {
     public partial class ClinicaContext : DbContext
     {
+        public DbSet<Agenda> Agendas { get; set; } = null!;
+        public DbSet<Consulta> Consultas { get; set; } = null!;
         public DbSet<Paciente> Pacientes { get; set; } = null!;
+        public DbSet<Profissao> Profissoes { get; set; } = null!;
+
 
         public ClinicaContext() : base()
         { }
@@ -28,6 +32,21 @@ namespace Clinica.Dominio.EF
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+
+            modelBuilder.Entity<Agenda>(entity =>
+            {
+                entity.Property(e => e.DataInclusao).HasDefaultValueSql("((1))");
+
+                entity.Property(e => e.Situacao).HasDefaultValueSql("(getdate())");
+            });
+
+            modelBuilder.Entity<Consulta>(entity =>
+            {
+                entity.Property(e => e.DataInclusao).HasDefaultValueSql("((1))");
+
+                entity.Property(e => e.Situacao).HasDefaultValueSql("(getdate())");
+            });
+
             modelBuilder.Entity<Paciente>(entity =>
             {
                 entity.Property(e => e.DataInclusao).HasDefaultValueSql("((1))");
