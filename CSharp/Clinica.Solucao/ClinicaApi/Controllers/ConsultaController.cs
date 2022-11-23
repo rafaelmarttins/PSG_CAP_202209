@@ -9,7 +9,7 @@ namespace ClinicaApi.Controllers
     /// <summary>
     /// 
     /// </summary>
-    [Route("api/clinica/[controller]")]
+    [Route("api/odonto/[controller]")]
     [ApiController]
     public class ConsultaController : ControllerBase
     {
