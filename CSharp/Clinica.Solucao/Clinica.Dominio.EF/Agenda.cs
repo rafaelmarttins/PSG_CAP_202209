@@ -25,7 +25,6 @@ namespace Clinica.Dominio.EF
         public int Ano { get; set; }
 
         [Column(name: "Situacao")]
-        [Unicode(false)]
         public bool? Situacao { get; set; }
 
         [Column(name: "DataInclusao", TypeName = "datetime")]

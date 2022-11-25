@@ -37,7 +37,7 @@ namespace Clinica.Dominio.EF
         [Column(name: "RG")]
         [Unicode(false)]
         [StringLength(11)]
-        public string? RG { get; set; }
+        public string? RG { get; set; } = null!;
 
         [Column(name: "CPF")]
         [Unicode(false)]
@@ -45,7 +45,6 @@ namespace Clinica.Dominio.EF
         public string? CPF { get; set; } = null!;
 
         [Column(name: "Situacao")]
-        [Unicode(false)]
         public bool? Situacao { get; set; }
 
         [Column(name: "DataInclusao", TypeName = "datetime")]

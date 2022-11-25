@@ -23,7 +23,6 @@ namespace Clinica.Dominio.EF
         public DateTime? DataInclusao { get; set; }
 
         [Column(name: "Ativo")]
-        [Unicode(false)]
         public bool? Situacao { get; set; }
     }
 }

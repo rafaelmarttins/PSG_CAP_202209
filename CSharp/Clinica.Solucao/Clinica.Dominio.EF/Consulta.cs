@@ -29,7 +29,6 @@ namespace Clinica.Dominio.EF
         public DateTime DataHora { get; set; }
 
         [Column(name: "Situacao")]
-        [Unicode(false)]
         public bool? Situacao { get; set; }
 
         [Column(name: "DataInclusao", TypeName = "datetime")]

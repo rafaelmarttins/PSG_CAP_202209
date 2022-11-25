@@ -17,15 +17,15 @@ namespace Clinica.Servico.Base
 
         TPoco? PesquisarPelaChave(object chave);
 
-        TPoco? Inserir(TPoco obj);
+        TPoco? Inserir(TPoco poco);
 
-        TPoco? Alterar(TPoco obj);
+        TPoco? Alterar(TPoco poco);
 
         TPoco? Excluir(object chave);
 
-        TDominio ConverterPara(TPoco obj);
+        TDominio ConverterPara(TPoco poco);
 
-        TPoco ConverterPara(TDominio obj);
+        TPoco ConverterPara(TDominio dominio);
 
         List<TPoco> ConverterPara(IQueryable<TDominio> query);
     }

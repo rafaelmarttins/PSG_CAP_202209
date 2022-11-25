@@ -53,9 +53,9 @@ namespace Clinica.Servico.Base
             return lidaPoco;
         }
 
-        public TPoco? Inserir(TPoco obj)
+        public TPoco? Inserir(TPoco poco)
         {
-            TDominio? nova = this.ConverterPara(obj);
+            TDominio? nova = this.ConverterPara(poco);
             TDominio? criada = this.genrepo.Insert(nova);
             TPoco? criadaPoco = null;
             if (criada != null)
@@ -65,9 +65,9 @@ namespace Clinica.Servico.Base
             return criadaPoco;
         }
 
-        public TPoco? Alterar(TPoco obj)
+        public TPoco? Alterar(TPoco poco)
         {
-            TDominio? editada = this.ConverterPara(obj);
+            TDominio? editada = this.ConverterPara(poco);
             TDominio? alterada = this.genrepo.Update(editada);
             TPoco? alteradaPoco = null;
             if (alterada != null)
@@ -88,14 +88,14 @@ namespace Clinica.Servico.Base
             return delPoco;
         }
 
-        public TDominio ConverterPara(TPoco obj)
+        public TDominio ConverterPara(TPoco poco)
         {
-            return this.genmap.Mapping.Map<TDominio>(obj);
+            return this.genmap.Mapping.Map<TDominio>(poco);
         }
 
-        public TPoco ConverterPara(TDominio obj)
+        public TPoco ConverterPara(TDominio dominio)
         {
-            return this.genmap.Mapping.Map<TPoco>(obj);
+            return this.genmap.Mapping.Map<TPoco>(dominio);
         }
 
         public virtual List<TPoco> ConverterPara(IQueryable<TDominio> query)
