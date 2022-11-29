@@ -26,7 +26,7 @@ namespace Clinica.Dominio.EF
         {
             if (!optionsBuilder.IsConfigured)
             {
-                
+                // Aqui ficava a Connection String.
             }
         }
 

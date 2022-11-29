@@ -15,7 +15,7 @@ builder.Services.AddSwaggerGen(opcoes =>
     opcoes.SwaggerDoc("v1", new OpenApiInfo()
     {
         Version = "v1",
-        Title = "ToDo API",
+        Title = "Clínica Odontológica",
         Description = "An ASP.NET Core Web API for managing ToDo items",
         TermsOfService = new Uri("https://example.com/terms"),
         Contact = new OpenApiContact
@@ -43,7 +43,7 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-    app.UseSwaggerUI(opcoes => opcoes.DocExpansion(DocExpansion.None));
+    app.UseSwaggerUI(opcoes => opcoes.DocExpansion(DocExpansion.None)); // DocExpansion.None faz com que os verbos http permaneçam fechados ao executar a API.
 }
 
 app.UseHttpsRedirection();

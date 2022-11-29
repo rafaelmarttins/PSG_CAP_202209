@@ -19,7 +19,7 @@ namespace Clinica.Dominio.EF
         [Unicode(false)]
         public string Historico { get; set; } = null!;
 
-        [Column(name: "Data")]
+        [Column(name: "Data", TypeName = "date")]
         public DateTime Data { get; set; }
 
         [Column(name: "Hora")]
