@@ -18,7 +18,7 @@ namespace Clinica.Dominio.EF
         [Column(name: "CodigoPaciente")]
         public int CodigoPaciente { get; set; }
 
-        [Column(name: "CodigoPaciente")]
+        [Column(name: "CodigoConsulta")]
         public int CodigoConsulta{ get; set; }
 
         [Column(name: "Ano") ]

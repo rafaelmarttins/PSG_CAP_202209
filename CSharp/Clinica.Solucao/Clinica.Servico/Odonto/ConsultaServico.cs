@@ -1,14 +1,15 @@
-﻿using Clinica.Dominio.EF;
-using Clinica.Poco;
-using Clinica.Servico.Base;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Clinica.Servico.Clinica
+using Clinica.Dominio.EF;
+using Clinica.Poco;
+using Clinica.Servico.Base;
+
+namespace Clinica.Servico.Odonto
 {
     public class ConsultaServico : GenericService<Consulta, ConsultaPoco>
     {

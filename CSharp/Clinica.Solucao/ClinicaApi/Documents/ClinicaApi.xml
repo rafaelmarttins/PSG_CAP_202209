@@ -126,6 +126,19 @@
             <param name="poco"> Instancia a ser informada. </param>
             <returns> Dado excluido por Instancia. </returns>
         </member>
+        <member name="T:ClinicaApi.Controllers.ExameController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ClinicaApi.Controllers.ExameController.GetAll(System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <summary>
+            Lista todos os registros da tabela Exame.
+            </summary>
+            <param name="take"> Onde inicia os resultados da pesquisa. </param>
+            <param name="skip"> Quantos registros serão retornados. </param>
+            <returns> Todos os registros. </returns>
+        </member>
         <member name="T:ClinicaApi.Controllers.PacienteController">
             <summary>
             
