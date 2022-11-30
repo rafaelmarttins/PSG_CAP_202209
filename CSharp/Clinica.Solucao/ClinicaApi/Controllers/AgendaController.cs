@@ -26,7 +26,7 @@ namespace ClinicaApi.Controllers
         }
 
         /// <summary>
-        /// Lista todos os registros da tabela Agenda.
+        /// Lista todos os registros da tabela Agenda por Paginação.
         /// </summary>
         /// <param name="take"> Onde inicia os resultados da pesquisa. </param>
         /// <param name="skip"> Quantos registros serão retornados. </param>
@@ -104,7 +104,7 @@ namespace ClinicaApi.Controllers
         }
 
         /// <summary>
-        /// Inclui um novo dado na tabela.
+        /// Inclui um novo dado na tabela Agenda.
         /// </summary>
         /// <param name="poco"> Dados que será incluido. </param>
         /// <returns> Dados incluido. </returns>
@@ -123,7 +123,7 @@ namespace ClinicaApi.Controllers
         }
 
         /// <summary>
-        /// Altera um dado existente no recurso.
+        /// Altera um dado existente na tabela Agenda.
         /// </summary>
         /// <param name="poco"> Altera o dado selecionado. </param>
         /// <returns> Altera o dado selecionado. </returns>

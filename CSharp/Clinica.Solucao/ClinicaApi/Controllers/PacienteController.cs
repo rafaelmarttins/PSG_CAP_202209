@@ -82,7 +82,7 @@ namespace ClinicaApi.Controllers
         }
 
         /// <summary>
-        /// Inclui um novo dado na tabela.
+        /// Inclui um novo dado na tabela Paciente.
         /// </summary>
         /// <param name="poco"> Dados que será incluido. </param>
         /// <returns> Dados incluido. </returns>
@@ -101,7 +101,7 @@ namespace ClinicaApi.Controllers
         }
 
         /// <summary>
-        /// Altera um dado existente no recurso.
+        /// Altera um dado existente na tabela Paciente.
         /// </summary>
         /// <param name="poco"> Altera o dado selecionado. </param>
         /// <returns> Altera o dado selecionado. </returns>

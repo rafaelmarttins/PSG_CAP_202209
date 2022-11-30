@@ -42,6 +42,11 @@ namespace Clinica.Servico.Base
             throw new NotImplementedException();
         }
 
+        public virtual List<TPoco> Vasculhar(int? take = null, int? skip = null, Expression<Func<TDominio, bool>>? predicate = null)
+        {
+            throw new NotImplementedException();
+        }
+
         public TPoco? PesquisarPelaChave(object chave)
         {
             TDominio? lida = this.genrepo.GetById(chave);

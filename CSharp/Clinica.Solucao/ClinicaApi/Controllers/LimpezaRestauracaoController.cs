@@ -12,7 +12,7 @@ namespace ClinicaApi.Controllers
     /// </summary>
     [Route("api/clinica/[controller]")]
     [ApiController]
-    public class ExameController : ControllerBase
+    public class LimpezaRestauracaoController : ControllerBase
     {
         private ProcedimentosServico servico;
 
@@ -20,13 +20,13 @@ namespace ClinicaApi.Controllers
         /// 
         /// </summary>
         /// <param name="context"></param>
-        public ExameController(ClinicaContext context) : base()
+        public LimpezaRestauracaoController(ClinicaContext context) : base()
         {
-            this.servico = new ProcedimentosServico(context);
+            servico = new ProcedimentosServico(context);
         }
 
         /// <summary>
-        /// Lista todos os registros da tabela Exame por Paginação e Tipo Serviço Exame.
+        /// Lista todos os registros da tabela Exame por Paginação e Tipo Serviço Limpeza Restauração.
         /// </summary>
         /// <param name="take"> Onde inicia os resultados da pesquisa. </param>
         /// <param name="skip"> Quantos registros serão retornados. </param>
@@ -46,7 +46,7 @@ namespace ClinicaApi.Controllers
                     }
                     else
                     {
-                        predicate = predicate.And(s => s.TipoServico == "EX");
+                        predicate = predicate.And(s => s.TipoServico == "LR");
                         listPoco = this.servico.Consultar(predicate);
                         return Ok(listPoco);
                     }
@@ -59,7 +59,7 @@ namespace ClinicaApi.Controllers
                     }
                     else
                     {
-                        predicate = predicate.And(s => s.TipoServico == "EX");
+                        predicate = predicate.And(s => s.TipoServico == "LR");
                         listPoco = this.servico.Vasculhar(take, skip, predicate);
                         return Ok(listPoco);
                     }
@@ -81,7 +81,7 @@ namespace ClinicaApi.Controllers
         {
             try
             {
-                List<ServicoPoco> listPoco = this.servico.Consultar(s => (s.TipoServico == "EX") && (s.CodigoServico == id));
+                List<ServicoPoco> listPoco = this.servico.Consultar(s => (s.TipoServico == "LR") && (s.CodigoServico == id));
                 return Ok(listPoco);
             }
             catch (Exception ex)
@@ -91,7 +91,7 @@ namespace ClinicaApi.Controllers
         }
 
         /// <summary>
-        ///  Lista os registro usando a chave de Exame.
+        ///  Lista os registro usando a chave de Limpeza Restauração.
         /// </summary>
         /// <param name="chave"> Chave de pesquisa. </param>
         /// <returns> Registro localizado. </returns>
@@ -100,7 +100,7 @@ namespace ClinicaApi.Controllers
         {
             try
             {
-                ServicoPoco poco = this.servico.PesquisarPelaChave(chave);
+                ServicoPoco poco = servico.PesquisarPelaChave(chave);
                 return Ok(poco);
             }
             catch (Exception ex)
@@ -110,7 +110,7 @@ namespace ClinicaApi.Controllers
         }
 
         /// <summary>
-        /// Inclui um novo dado na tabela Exame.
+        /// Inclui um novo dado na tabela Limpeza Restauração.
         /// </summary>
         /// <param name="poco"> Dados que será incluido. </param>
         /// <returns> Dados incluido. </returns>
@@ -119,7 +119,7 @@ namespace ClinicaApi.Controllers
         {
             try
             {
-                ServicoPoco novoPoco = this.servico.Inserir(poco);
+                ServicoPoco novoPoco = servico.Inserir(poco);
                 return Ok(novoPoco);
             }
             catch (Exception ex)
@@ -129,7 +129,7 @@ namespace ClinicaApi.Controllers
         }
 
         /// <summary>
-        /// Altera um dado existente na tabela Exame.
+        /// Altera um dado existente na tabela Limpeza Restauração.
         /// </summary>
         /// <param name="poco"> Altera o dado selecionado. </param>
         /// <returns> Altera o dado selecionado. </returns>
@@ -138,7 +138,7 @@ namespace ClinicaApi.Controllers
         {
             try
             {
-                ServicoPoco novoPoco = this.servico.Alterar(poco);
+                ServicoPoco novoPoco = servico.Alterar(poco);
                 return Ok(novoPoco);
             }
             catch (Exception ex)
@@ -157,7 +157,7 @@ namespace ClinicaApi.Controllers
         {
             try
             {
-                ServicoPoco poco = this.servico.Excluir(chave);
+                ServicoPoco poco = servico.Excluir(chave);
                 return Ok(poco);
             }
             catch (Exception ex)
@@ -176,7 +176,7 @@ namespace ClinicaApi.Controllers
         {
             try
             {
-                ServicoPoco novoPoco = this.servico.Excluir(poco.CodigoServico);
+                ServicoPoco novoPoco = servico.Excluir(poco.CodigoServico);
                 return Ok(novoPoco);
             }
             catch (Exception ex)
