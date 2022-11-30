@@ -15,7 +15,7 @@ namespace Clinica.Servico.Odonto
         public ProcedimentosServico(ClinicaContext contex) : base(contex)
         { }
 
-        public override List<ServicoPoco> Consultar(Expression<Func<Dominio.EF.Servico, bool>>? predicate = null)
+        public override List<ServicoPoco> Consultar(Expression<Func<Clinica.Dominio.EF.Servico, bool>>? predicate = null)
         {
             IQueryable<Clinica.Dominio.EF.Servico> query;
             if (predicate == null)

@@ -20,25 +20,25 @@ namespace Clinica.Dominio.EF
 
         [Column(name: "Descricao")]
         [Unicode(false)]
-        public string? Descricao { get; set; } = null!;
+        public string Descricao { get; set; } = null!;
 
         [Column(name: "Preco")]
         public decimal Preco { get; set; }
 
         [Column(name: "MaterialUsado")]
         [Unicode(false)]
-        public string? MaterialUsado { get; set; } = null!;
+        public string? MaterialUsado { get; set; }
 
         [Column(name: "DenteTratado")]
-        public int DenteTratado { get; set; }
+        public int? DenteTratado { get; set; }
 
         [Column(name: "MedidaPreventiva")]
         [Unicode(false)]
-        public string? MedidaPreventiva { get; set; } = null!;
+        public string? MedidaPreventiva { get; set; }
 
         [Column(name: "TipoExame")]
         [Unicode(false)]
-        public string? TipoExame { get; set; } = null!;
+        public string? TipoExame { get; set; }
 
         [Column(name: "TipoServico")]
         [Unicode(false)]
