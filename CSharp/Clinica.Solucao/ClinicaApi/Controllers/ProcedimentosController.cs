@@ -27,7 +27,7 @@ namespace ClinicaApi.Controllers
         }
 
         /// <summary>
-        /// Lista todos os registros da tabela Procedimentos por Paginação e Tipo Serviço.
+        /// Lista todos os registros de Procedimentos por Paginação e Tipo Serviço.
         /// </summary>
         /// <param name="tipoServico"> Informar o tipo de Serviço. </param>
         /// <param name="take"> Onde inicia os resultados da pesquisa. </param>
@@ -94,7 +94,7 @@ namespace ClinicaApi.Controllers
         }
 
         /// <summary>
-        /// Inclui um novo dado na tabela Procedimentos.
+        /// Inclui um novo dado de Procedimentos.
         /// </summary>
         /// <param name="poco"> Dados que será incluido. </param>
         /// <returns> Dados incluido. </returns>
@@ -113,7 +113,7 @@ namespace ClinicaApi.Controllers
         }
 
         /// <summary>
-        /// Altera um dado existente na tabela Exame.
+        /// Altera um dado existente de Procedimentos.
         /// </summary>
         /// <param name="poco"> Altera o dado selecionado. </param>
         /// <returns> Altera o dado selecionado. </returns>

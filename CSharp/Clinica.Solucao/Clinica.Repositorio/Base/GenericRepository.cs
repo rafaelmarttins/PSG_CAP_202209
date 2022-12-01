@@ -90,6 +90,7 @@ namespace Clinica.Repositorio.Base
             this.context.SaveChanges();
             return obj;
         }
+
         public TDominio? Delete(object id)
         {
             TDominio? tabelaExistente = this.GetById(id);
@@ -97,6 +98,7 @@ namespace Clinica.Repositorio.Base
             this.context.SaveChanges();
             return tabelaExistente;
         }
+
         public void Save()
         {
             this.context.SaveChanges();

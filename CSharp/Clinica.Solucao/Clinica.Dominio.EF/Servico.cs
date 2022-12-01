@@ -32,6 +32,12 @@ namespace Clinica.Dominio.EF
         [Column(name: "DenteTratado")]
         public int? DenteTratado { get; set; }
 
+        [Column(name: "DenteExtraido")]
+        public int? DenteExtraido { get; set; }
+
+        [Column(name: "DenteCanalPar")]
+        public int? DenteCanalPar { get; set; }
+
         [Column(name: "MedidaPreventiva")]
         [Unicode(false)]
         public string? MedidaPreventiva { get; set; }
@@ -44,6 +50,9 @@ namespace Clinica.Dominio.EF
         [Unicode(false)]
         [StringLength(2)]
         public string TipoServico { get; set; } = null!;
+
+        [Column(name: "CodigoTipoServico")]
+        public int? CodigoTipoServico { get; set; }
 
         [Column(name: "Situacao")]
         [Unicode(false)]

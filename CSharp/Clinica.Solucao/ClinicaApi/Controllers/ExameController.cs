@@ -26,7 +26,7 @@ namespace ClinicaApi.Controllers
         }
 
         /// <summary>
-        /// Lista todos os registros da tabela Exame por Paginação.
+        /// Lista todos os registros de Exame por Paginação.
         /// </summary>
         /// <param name="take"> Onde inicia os resultados da pesquisa. </param>
         /// <param name="skip"> Quantos registros serão retornados. </param>
@@ -91,7 +91,7 @@ namespace ClinicaApi.Controllers
         }
 
         /// <summary>
-        /// Inclui um novo dado na tabela Exame.
+        /// Inclui um novo dado de Exame.
         /// </summary>
         /// <param name="poco"> Dados que será incluido. </param>
         /// <returns> Dados incluido. </returns>
@@ -110,7 +110,7 @@ namespace ClinicaApi.Controllers
         }
 
         /// <summary>
-        /// Altera um dado existente na tabela Exame.
+        /// Altera um dado existente de Exame.
         /// </summary>
         /// <param name="poco"> Altera o dado selecionado. </param>
         /// <returns> Altera o dado selecionado. </returns>

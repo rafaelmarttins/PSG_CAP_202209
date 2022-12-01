@@ -15,6 +15,7 @@ namespace Clinica.Dominio.EF
         public DbSet<Paciente> Pacientes { get; set; } = null!;
         public DbSet<Profissao> Profissoes { get; set; } = null!;
         public DbSet<Servico> Servicos { get; set; } = null!;
+        public DbSet<TipoServico> TiposServico { get; set; } = null!;
 
 
         public ClinicaContext() : base()

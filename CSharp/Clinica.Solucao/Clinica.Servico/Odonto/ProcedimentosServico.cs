@@ -73,20 +73,23 @@ namespace Clinica.Servico.Odonto
 
         public override List<ServicoPoco> ConverterPara(IQueryable<Dominio.EF.Servico> query)
         {
-            return query.Select(exa =>
+            return query.Select(pce =>
                     new ServicoPoco()
                     {
-                        CodigoServico = exa.CodigoServico,
-                        DataAlteracao = exa.DataAlteracao,
-                        DataInclusao = exa.DataInclusao,
-                        Descricao = exa.Descricao,
-                        MedidaPreventiva = exa.MedidaPreventiva,
-                        Preco = exa.Preco,
-                        Situacao = exa.Situacao,
-                        TipoExame = exa.TipoExame,
-                        TipoServico = exa.TipoServico,
-                        DenteTratado = exa.DenteTratado,
-                        MaterialUsado = exa.MedidaPreventiva
+                        CodigoServico = pce.CodigoServico,
+                        DataAlteracao = pce.DataAlteracao,
+                        DataInclusao = pce.DataInclusao,
+                        Descricao = pce.Descricao,
+                        MedidaPreventiva = pce.MedidaPreventiva,
+                        Preco = pce.Preco,
+                        Situacao = pce.Situacao,
+                        TipoExame = pce.TipoExame,
+                        TipoServico = pce.TipoServico,
+                        DenteTratado = pce.DenteTratado,
+                        MaterialUsado = pce.MedidaPreventiva,
+                        DenteCanalPar = pce.DenteCanalPar,
+                        DenteExtraido = pce.DenteExtraido,
+                        CodigoTipoServico = pce.CodigoTipoServico
                     }
             )
             .ToList();

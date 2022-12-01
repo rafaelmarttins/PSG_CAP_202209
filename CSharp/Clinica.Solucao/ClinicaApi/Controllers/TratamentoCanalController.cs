@@ -7,26 +7,19 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ClinicaApi.Controllers
 {
-    /// <summary>
-    /// 
-    /// </summary>
     [Route("api/clinica/[controller]")]
     [ApiController]
-    public class LimpezaRestauracaoController : ControllerBase
+    public class TratamentoCanalController : ControllerBase
     {
         private ProcedimentosServico servico;
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="context"></param>
-        public LimpezaRestauracaoController(ClinicaContext context) : base()
+        public TratamentoCanalController(ClinicaContext context) : base()
         {
-            servico = new ProcedimentosServico(context);
+            this.servico = new ProcedimentosServico(context);
         }
 
         /// <summary>
-        /// Lista todos os registros de Limpeza Restauração por Paginação.
+        /// Lista todos os registros de Tratamento Canal por Paginação.
         /// </summary>
         /// <param name="take"> Onde inicia os resultados da pesquisa. </param>
         /// <param name="skip"> Quantos registros serão retornados. </param>
@@ -46,7 +39,7 @@ namespace ClinicaApi.Controllers
                     }
                     else
                     {
-                        predicate = predicate.And(s => s.TipoServico == "LR");
+                        predicate = predicate.And(s => s.TipoServico == "TC");
                         listPoco = this.servico.Consultar(predicate);
                         return Ok(listPoco);
                     }
@@ -59,7 +52,7 @@ namespace ClinicaApi.Controllers
                     }
                     else
                     {
-                        predicate = predicate.And(s => s.TipoServico == "LR");
+                        predicate = predicate.And(s => s.TipoServico == "TC");
                         listPoco = this.servico.Vasculhar(take, skip, predicate);
                         return Ok(listPoco);
                     }
@@ -72,7 +65,7 @@ namespace ClinicaApi.Controllers
         }
 
         /// <summary>
-        /// Lista os registro usando a chave de Limpeza Restauração.
+        /// Lista os registro usando a chave de Tratamento Canal.
         /// </summary>
         /// <param name="id"> Chave de pesquisa. </param>
         /// <returns> Registro localizado. </returns>
@@ -81,7 +74,7 @@ namespace ClinicaApi.Controllers
         {
             try
             {
-                List<ServicoPoco> listPoco = this.servico.Consultar(s => (s.TipoServico == "LR") && (s.CodigoServico == id));
+                List<ServicoPoco> listPoco = this.servico.Consultar(s => (s.TipoServico == "TC") && (s.CodigoServico == id));
                 return Ok(listPoco);
             }
             catch (Exception ex)
@@ -91,7 +84,7 @@ namespace ClinicaApi.Controllers
         }
 
         /// <summary>
-        /// Inclui um novo dado na tabela Limpeza Restauração.
+        /// Inclui um novo dado na tabela Tratamento Canal.
         /// </summary>
         /// <param name="poco"> Dados que será incluido. </param>
         /// <returns> Dados incluido. </returns>
@@ -110,7 +103,7 @@ namespace ClinicaApi.Controllers
         }
 
         /// <summary>
-        /// Altera um dado existente na tabela Limpeza Restauração.
+        /// Altera um dado existente na tabela Tratamento Canal.
         /// </summary>
         /// <param name="poco"> Altera o dado selecionado. </param>
         /// <returns> Altera o dado selecionado. </returns>

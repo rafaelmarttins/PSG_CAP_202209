@@ -125,7 +125,7 @@
         </member>
         <member name="M:ClinicaApi.Controllers.ExameController.GetAll(System.Nullable{System.Int32},System.Nullable{System.Int32})">
             <summary>
-            Lista todos os registros da tabela Exame por Paginação.
+            Lista todos os registros de Exame por Paginação.
             </summary>
             <param name="take"> Onde inicia os resultados da pesquisa. </param>
             <param name="skip"> Quantos registros serão retornados. </param>
@@ -140,19 +140,55 @@
         </member>
         <member name="M:ClinicaApi.Controllers.ExameController.Post(Clinica.Poco.ServicoPoco)">
             <summary>
-            Inclui um novo dado na tabela Exame.
+            Inclui um novo dado de Exame.
             </summary>
             <param name="poco"> Dados que será incluido. </param>
             <returns> Dados incluido. </returns>
         </member>
         <member name="M:ClinicaApi.Controllers.ExameController.Put(Clinica.Poco.ServicoPoco)">
             <summary>
-            Altera um dado existente na tabela Exame.
+            Altera um dado existente de Exame.
             </summary>
             <param name="poco"> Altera o dado selecionado. </param>
             <returns> Altera o dado selecionado. </returns>
         </member>
         <member name="M:ClinicaApi.Controllers.ExameController.DeleteById(System.Int32)">
+            <summary>
+            Exclui um registro existente no recurso, utilizando um id.
+            </summary>
+            <param name="chave"> Chave para localização. </param>
+            <returns> Dado excluido por Id. </returns>
+        </member>
+        <member name="M:ClinicaApi.Controllers.ExtracaoController.GetAll(System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <summary>
+            Lista todos os registros de Extração por Paginação.
+            </summary>
+            <param name="take"> Onde inicia os resultados da pesquisa. </param>
+            <param name="skip"> Quantos registros serão retornados. </param>
+            <returns> Todos os registros. </returns>
+        </member>
+        <member name="M:ClinicaApi.Controllers.ExtracaoController.Get(System.Int32)">
+            <summary>
+            Lista os registro usando a chave de Extração.
+            </summary>
+            <param name="id"> Chave de pesquisa. </param>
+            <returns> Registro localizado. </returns>
+        </member>
+        <member name="M:ClinicaApi.Controllers.ExtracaoController.Post(Clinica.Poco.ServicoPoco)">
+            <summary>
+            Inclui um novo dado de Extração.
+            </summary>
+            <param name="poco"> Dados que será incluido. </param>
+            <returns> Dados incluido. </returns>
+        </member>
+        <member name="M:ClinicaApi.Controllers.ExtracaoController.Put(Clinica.Poco.ServicoPoco)">
+            <summary>
+            Altera um dado existente de Extração.
+            </summary>
+            <param name="poco"> Altera o dado selecionado. </param>
+            <returns> Altera o dado selecionado. </returns>
+        </member>
+        <member name="M:ClinicaApi.Controllers.ExtracaoController.DeleteById(System.Int32)">
             <summary>
             Exclui um registro existente no recurso, utilizando um id.
             </summary>
@@ -172,7 +208,7 @@
         </member>
         <member name="M:ClinicaApi.Controllers.LimpezaRestauracaoController.GetAll(System.Nullable{System.Int32},System.Nullable{System.Int32})">
             <summary>
-            Lista todos os registros da tabela Limpeza Restauração por Paginação.
+            Lista todos os registros de Limpeza Restauração por Paginação.
             </summary>
             <param name="take"> Onde inicia os resultados da pesquisa. </param>
             <param name="skip"> Quantos registros serão retornados. </param>
@@ -272,7 +308,7 @@
         </member>
         <member name="M:ClinicaApi.Controllers.ProcedimentosController.GetAll(System.String,System.Nullable{System.Int32},System.Nullable{System.Int32})">
             <summary>
-            Lista todos os registros da tabela Procedimentos por Paginação e Tipo Serviço.
+            Lista todos os registros de Procedimentos por Paginação e Tipo Serviço.
             </summary>
             <param name="tipoServico"> Informar o tipo de Serviço. </param>
             <param name="take"> Onde inicia os resultados da pesquisa. </param>
@@ -281,22 +317,22 @@
         </member>
         <member name="M:ClinicaApi.Controllers.ProcedimentosController.Get(System.String,System.Int32)">
             <summary>
-            Lista os registro usando a chave de Exame.
+            Lista os registro por Id e Tipo Serviço.
             </summary>
-            <param name="tipoServico"></param>
-            <param name="id"></param>
+            <param name="tipoServico"> Informar o tipo de Serviço. </param>
+            <param name="id"> Chave de pesquisa. </param>
             <returns></returns>
         </member>
         <member name="M:ClinicaApi.Controllers.ProcedimentosController.Post(Clinica.Poco.ServicoPoco)">
             <summary>
-            Inclui um novo dado na tabela Procedimentos.
+            Inclui um novo dado de Procedimentos.
             </summary>
             <param name="poco"> Dados que será incluido. </param>
             <returns> Dados incluido. </returns>
         </member>
         <member name="M:ClinicaApi.Controllers.ProcedimentosController.Put(Clinica.Poco.ServicoPoco)">
             <summary>
-            Altera um dado existente na tabela Exame.
+            Altera um dado existente de Procedimentos.
             </summary>
             <param name="poco"> Altera o dado selecionado. </param>
             <returns> Altera o dado selecionado. </returns>
@@ -349,6 +385,78 @@
             <returns> Altera o dado selecionado. </returns>
         </member>
         <member name="M:ClinicaApi.Controllers.ProfissaoController.DeleteById(System.Int32)">
+            <summary>
+            Exclui um registro existente no recurso, utilizando um id.
+            </summary>
+            <param name="chave"> Chave para localização. </param>
+            <returns> Dado excluido por Id. </returns>
+        </member>
+        <member name="M:ClinicaApi.Controllers.TipoServicoController.GetAll(System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <summary>
+            Lista todos os registros de Tipo Serviço.
+            </summary>
+            <param name="take"> Onde inicia os resultados da pesquisa. </param>
+            <param name="skip"> Quantos registros serão retornados. </param>
+            <returns> Todos os registros. </returns>
+        </member>
+        <member name="M:ClinicaApi.Controllers.TipoServicoController.GetById(System.Int32)">
+            <summary>
+             Lista os registro usando a chave de Tipo Serviço.
+            </summary>
+            <param name="chave"> Chave de pesquisa. </param>
+            <returns> Registro localizado. </returns>
+        </member>
+        <member name="M:ClinicaApi.Controllers.TipoServicoController.Post(Clinica.Poco.TipoServicoPoco)">
+            <summary>
+            Inclui um novo dado de Tipo Serviço.
+            </summary>
+            <param name="poco"> Dados que será incluido. </param>
+            <returns> Dados incluido. </returns>
+        </member>
+        <member name="M:ClinicaApi.Controllers.TipoServicoController.Put(Clinica.Poco.TipoServicoPoco)">
+            <summary>
+            Altera um dado existente de Tipo Serviço.
+            </summary>
+            <param name="poco"> Altera o dado selecionado. </param>
+            <returns> Altera o dado selecionado. </returns>
+        </member>
+        <member name="M:ClinicaApi.Controllers.TipoServicoController.DeleteById(System.Int32)">
+            <summary>
+            Exclui um registro existente no recurso, utilizando um id.
+            </summary>
+            <param name="chave"> Chave para localização. </param>
+            <returns> Dado excluido por Id. </returns>
+        </member>
+        <member name="M:ClinicaApi.Controllers.TratamentoCanalController.GetAll(System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <summary>
+            Lista todos os registros de Tratamento Canal por Paginação.
+            </summary>
+            <param name="take"> Onde inicia os resultados da pesquisa. </param>
+            <param name="skip"> Quantos registros serão retornados. </param>
+            <returns> Todos os registros. </returns>
+        </member>
+        <member name="M:ClinicaApi.Controllers.TratamentoCanalController.Get(System.Int32)">
+            <summary>
+            Lista os registro usando a chave de Tratamento Canal.
+            </summary>
+            <param name="id"> Chave de pesquisa. </param>
+            <returns> Registro localizado. </returns>
+        </member>
+        <member name="M:ClinicaApi.Controllers.TratamentoCanalController.Post(Clinica.Poco.ServicoPoco)">
+            <summary>
+            Inclui um novo dado na tabela Tratamento Canal.
+            </summary>
+            <param name="poco"> Dados que será incluido. </param>
+            <returns> Dados incluido. </returns>
+        </member>
+        <member name="M:ClinicaApi.Controllers.TratamentoCanalController.Put(Clinica.Poco.ServicoPoco)">
+            <summary>
+            Altera um dado existente na tabela Tratamento Canal.
+            </summary>
+            <param name="poco"> Altera o dado selecionado. </param>
+            <returns> Altera o dado selecionado. </returns>
+        </member>
+        <member name="M:ClinicaApi.Controllers.TratamentoCanalController.DeleteById(System.Int32)">
             <summary>
             Exclui um registro existente no recurso, utilizando um id.
             </summary>
