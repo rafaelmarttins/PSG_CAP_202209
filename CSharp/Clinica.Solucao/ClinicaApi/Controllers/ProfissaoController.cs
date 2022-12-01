@@ -119,24 +119,5 @@ namespace ClinicaApi.Controllers
                 return BadRequest(ex.ToString());
             }
         }
-
-        /// <summary>
-        /// Realiza a exclusão de um registro através de uma instância.
-        /// </summary>
-        /// <param name="poco"> Instancia a ser informada. </param>
-        /// <returns> Dado excluido por Instancia. </returns>
-        [HttpDelete]
-        public ActionResult<ProfissaoPoco> Delete([FromBody] ProfissaoPoco poco)
-        {
-            try
-            {
-                ProfissaoPoco novoPoco = this.servico.Excluir(poco.CodigoProfissao);
-                return Ok(novoPoco);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.ToString());
-            }
-        }
     }
 }

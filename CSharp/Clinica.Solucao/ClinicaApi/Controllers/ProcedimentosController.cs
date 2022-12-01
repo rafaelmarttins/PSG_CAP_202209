@@ -27,11 +27,11 @@ namespace ClinicaApi.Controllers
         }
 
         /// <summary>
-        /// 
+        /// Lista todos os registros da tabela Procedimentos por Paginação e Tipo Serviço.
         /// </summary>
-        /// <param name="tipoServico"></param>
-        /// <param name="take"></param>
-        /// <param name="skip"></param>
+        /// <param name="tipoServico"> Informar o tipo de Serviço. </param>
+        /// <param name="take"> Onde inicia os resultados da pesquisa. </param>
+        /// <param name="skip"> Quantos registros serão retornados. </param>
         /// <returns></returns>
         [HttpGet("{tipoServico}")]
         public ActionResult<List<ServicoPoco>> GetAll(string tipoServico, int? take = null, int? skip = null)
@@ -74,10 +74,10 @@ namespace ClinicaApi.Controllers
         }
 
         /// <summary>
-        /// 
+        /// Lista os registro por Id e Tipo Serviço.
         /// </summary>
-        /// <param name="tipoServico"></param>
-        /// <param name="id"></param>
+        /// <param name="tipoServico"> Informar o tipo de Serviço. </param>
+        /// <param name="id"> Chave de pesquisa. </param>
         /// <returns></returns>
         [HttpGet("{tipoServico}/{id:int}")]
         public ActionResult<ServicoPoco> Get(string tipoServico, int id)
@@ -88,6 +88,63 @@ namespace ClinicaApi.Controllers
                 return Ok(listPoco);
             }
             catch(Exception ex)
+            {
+                return BadRequest(ex.ToString());
+            }
+        }
+
+        /// <summary>
+        /// Inclui um novo dado na tabela Procedimentos.
+        /// </summary>
+        /// <param name="poco"> Dados que será incluido. </param>
+        /// <returns> Dados incluido. </returns>
+        [HttpPost]
+        public ActionResult<ServicoPoco> Post([FromBody] ServicoPoco poco)
+        {
+            try
+            {
+                ServicoPoco novoPoco = this.servico.Inserir(poco);
+                return Ok(novoPoco);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.ToString());
+            }
+        }
+
+        /// <summary>
+        /// Altera um dado existente na tabela Exame.
+        /// </summary>
+        /// <param name="poco"> Altera o dado selecionado. </param>
+        /// <returns> Altera o dado selecionado. </returns>
+        [HttpPut]
+        public ActionResult<ServicoPoco> Put([FromBody] ServicoPoco poco)
+        {
+            try
+            {
+                ServicoPoco novoPoco = this.servico.Alterar(poco);
+                return Ok(novoPoco);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.ToString());
+            }
+        }
+
+        /// <summary>
+        /// Exclui um registro existente no recurso, utilizando um id.
+        /// </summary>
+        /// <param name="chave"> Chave para localização. </param>
+        /// <returns> Dado excluido por Id. </returns>
+        [HttpDelete("{chave:int}")]
+        public ActionResult<ServicoPoco> DeleteById(int chave)
+        {
+            try
+            {
+                ServicoPoco poco = this.servico.Excluir(chave);
+                return Ok(poco);
+            }
+            catch (Exception ex)
             {
                 return BadRequest(ex.ToString());
             }

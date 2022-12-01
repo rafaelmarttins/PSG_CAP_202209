@@ -26,7 +26,7 @@ namespace ClinicaApi.Controllers
         }
 
         /// <summary>
-        /// Lista todos os registros da tabela Exame por Paginação e Tipo Serviço Limpeza Restauração.
+        /// Lista todos os registros da tabela Limpeza Restauração por Paginação.
         /// </summary>
         /// <param name="take"> Onde inicia os resultados da pesquisa. </param>
         /// <param name="skip"> Quantos registros serão retornados. </param>
@@ -72,10 +72,10 @@ namespace ClinicaApi.Controllers
         }
 
         /// <summary>
-        /// 
+        /// Lista os registro usando a chave de Limpeza Restauração.
         /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
+        /// <param name="id"> Chave de pesquisa. </param>
+        /// <returns> Registro localizado. </returns>
         [HttpGet("{id:int}")]
         public ActionResult<ServicoPoco> Get(int id)
         {
@@ -83,25 +83,6 @@ namespace ClinicaApi.Controllers
             {
                 List<ServicoPoco> listPoco = this.servico.Consultar(s => (s.TipoServico == "LR") && (s.CodigoServico == id));
                 return Ok(listPoco);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.ToString());
-            }
-        }
-
-        /// <summary>
-        ///  Lista os registro usando a chave de Limpeza Restauração.
-        /// </summary>
-        /// <param name="chave"> Chave de pesquisa. </param>
-        /// <returns> Registro localizado. </returns>
-        [HttpGet("{chave:int}")]
-        public ActionResult<ServicoPoco> GetById(int chave)
-        {
-            try
-            {
-                ServicoPoco poco = servico.PesquisarPelaChave(chave);
-                return Ok(poco);
             }
             catch (Exception ex)
             {
@@ -159,25 +140,6 @@ namespace ClinicaApi.Controllers
             {
                 ServicoPoco poco = servico.Excluir(chave);
                 return Ok(poco);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.ToString());
-            }
-        }
-
-        /// <summary>
-        /// Realiza a exclusão de um registro através de uma instância.
-        /// </summary>
-        /// <param name="poco"> Instancia a ser informada. </param>
-        /// <returns> Dado excluido por Instancia. </returns>
-        [HttpDelete]
-        public ActionResult<ServicoPoco> Delete([FromBody] ServicoPoco poco)
-        {
-            try
-            {
-                ServicoPoco novoPoco = servico.Excluir(poco.CodigoServico);
-                return Ok(novoPoco);
             }
             catch (Exception ex)
             {
