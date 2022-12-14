@@ -1,0 +1,24 @@
+1) - Verdadeiro, as afirmações citadas na questão estão corretamente de acordo com POO.
+
+2) - Verdadeiro, o código da questão aplica somente o conceito de herança e não de Polimorfismo.
+
+3) - Verdadeiro, porque o código utiliza de forma correta os pilares de herança e polimorfismo. A classe pai é abstract assim possibilitando que as classes filhas possa fazer override dos métodos.
+
+4) - Verdadeiro, pois classes estáticas não pode ser instanciadas.
+
+5) - Verdadeiro
+A - Falso, porque só é possível estender outra classe utilizando o conceito de herança.
+B - Falso, pois é necessário que tenha alguma relação entre as classes.
+C - Falso, os conceitos citados na afirmação estão trocados.
+D - Falso, não se trata de um Objeto e sim de uma Classe.
+E - Falso, quando uma propriedade não possui um Get ela pode ser considerada como somente gravação.
+
+6) - Verdadeiro, a melhoria sugerida é válida e necessária pois foi informado no constructor da classe o atributo da classe pai.
+
+7) - Verdadeiro, as classes não possuem propriedades e o construtores não implementam os atributos de sua própria classe e também não foi atribuido valor para os atributos nos construtores.
+
+8) - Verdadeiro, os construtores das classes apresentado na questão não implementam os atributos da própria classe.
+
+9) - Falso, porque o método UPDATE tenta acessar as propriedades da classe e não consegue, pois a classe não possui propriedades.
+
+10) - Falso, pois o método EDIT necessita do corpo e como parâmetro está sendo passado obj e na atribuição chave.
