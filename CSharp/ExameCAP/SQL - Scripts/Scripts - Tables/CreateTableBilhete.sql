@@ -1,0 +1,9 @@
+USE ExameCAPDB
+GO
+CREATE TABLE Bilhete(
+	CodigoBilhete INT NOT NULL IDENTITY(1,1),
+	NumeroBilhete INT NOT NULL,
+	Assento VARCHAR(MAX) NOT NULL,
+	CONSTRAINT PK_Bilhete PRIMARY KEY (CodigoBilhete),
+)
+GO
