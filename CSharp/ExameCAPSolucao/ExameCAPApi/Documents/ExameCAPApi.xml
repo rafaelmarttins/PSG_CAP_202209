@@ -4,47 +4,141 @@
         <name>ExameCAPApi</name>
     </assembly>
     <members>
-        <member name="T:ExameCAPApi.Controllers.FuncionarioController">
+        <member name="T:ExameCapApi.Controllers.BilheteController">
             <summary>
             
             </summary>
         </member>
-        <member name="M:ExameCAPApi.Controllers.FuncionarioController.#ctor(ExameCAP.Dominio.EF.ExameCAPContext)">
+        <member name="M:ExameCapApi.Controllers.BilheteController.#ctor(ExameCAP.Dominio.EF.ExameCAPContext)">
             <summary>
             
             </summary>
-            <param name="context"></param>
+            <param name="contexto"></param>
         </member>
-        <member name="M:ExameCAPApi.Controllers.FuncionarioController.GetAll(System.Nullable{System.Int32},System.Nullable{System.Int32})">
+        <member name="M:ExameCapApi.Controllers.BilheteController.GetAll(System.Nullable{System.Int32},System.Nullable{System.Int32})">
             <summary>
-            Lista todos os registros de Funcionário por Paginação.
+            Lista todos os registros da tabela Bilhete por Paginação.
             </summary>
             <param name="take"> Onde inicia os resultados da pesquisa. </param>
             <param name="skip"> Quantos registros serão retornados. </param>
             <returns> Todos os registros. </returns>
         </member>
-        <member name="M:ExameCAPApi.Controllers.FuncionarioController.GetById(System.Int32)">
+        <member name="M:ExameCapApi.Controllers.BilheteController.GetByFuncionarioId(System.Int32)">
+            <summary>
+             Lista os registro usando a chave de Bilhete.
+            </summary>
+            <param name="chave"> Chave de pesquisa. </param>
+            <returns> Registro localizado. </returns>
+        </member>
+        <member name="M:ExameCapApi.Controllers.BilheteController.Post(ExameCAP.Poco.BilhetePoco)">
+            <summary>
+            Inclui um novo dado na tabela Bilhete.
+            </summary>
+            <param name="poco"> Dados que será incluido. </param>
+            <returns> Dados incluido. </returns>
+        </member>
+        <member name="M:ExameCapApi.Controllers.BilheteController.Put(ExameCAP.Poco.BilhetePoco)">
+            <summary>
+            Altera um dado existente na tabela Bilhete.
+            </summary>
+            <param name="poco"> Altera o dado selecionado. </param>
+            <returns> Altera o dado selecionado. </returns>
+        </member>
+        <member name="M:ExameCapApi.Controllers.BilheteController.DeleteById(System.Int32)">
+            <summary>
+            Exclui um registro existente no recurso, utilizando um id.
+            </summary>
+            <param name="chave"> Chave para localização. </param>
+            <returns> Dado excluido por Id. </returns>
+        </member>
+        <member name="T:ExameCapApi.Controllers.FuncionarioController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ExameCapApi.Controllers.FuncionarioController.#ctor(ExameCAP.Dominio.EF.ExameCAPContext)">
+            <summary>
+            
+            </summary>
+            <param name="contexto"></param>
+        </member>
+        <member name="M:ExameCapApi.Controllers.FuncionarioController.GetAll(System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <summary>
+            Lista todos os registros da tabela Funcionário por Paginação.
+            </summary>
+            <param name="take"> Onde inicia os resultados da pesquisa. </param>
+            <param name="skip"> Quantos registros serão retornados. </param>
+            <returns> Todos os registros. </returns>
+        </member>
+        <member name="M:ExameCapApi.Controllers.FuncionarioController.GetByFuncionarioId(System.Int32)">
             <summary>
              Lista os registro usando a chave de Funcionário.
             </summary>
             <param name="chave"> Chave de pesquisa. </param>
             <returns> Registro localizado. </returns>
         </member>
-        <member name="M:ExameCAPApi.Controllers.FuncionarioController.Post(ExameCAP.Poco.FuncionarioPoco)">
+        <member name="M:ExameCapApi.Controllers.FuncionarioController.Post(ExameCAP.Poco.FuncionarioPoco)">
             <summary>
-            Inclui um novo dado em Funcionário.
+            Inclui um novo dado na tabela Funcionário.
             </summary>
             <param name="poco"> Dados que será incluido. </param>
             <returns> Dados incluido. </returns>
         </member>
-        <member name="M:ExameCAPApi.Controllers.FuncionarioController.Put(ExameCAP.Poco.FuncionarioPoco)">
+        <member name="M:ExameCapApi.Controllers.FuncionarioController.Put(ExameCAP.Poco.FuncionarioPoco)">
             <summary>
-            Altera um dado existente em Funcionário.
+            Altera um dado existente na tabela Funcionário.
             </summary>
             <param name="poco"> Altera o dado selecionado. </param>
             <returns> Altera o dado selecionado. </returns>
         </member>
-        <member name="M:ExameCAPApi.Controllers.FuncionarioController.DeleteById(System.Int64)">
+        <member name="M:ExameCapApi.Controllers.FuncionarioController.DeleteById(System.Int32)">
+            <summary>
+            Exclui um registro existente no recurso, utilizando um id.
+            </summary>
+            <param name="chave"> Chave para localização. </param>
+            <returns> Dado excluido por Id. </returns>
+        </member>
+        <member name="T:ExameCapApi.Controllers.PassageiroController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ExameCapApi.Controllers.PassageiroController.#ctor(ExameCAP.Dominio.EF.ExameCAPContext)">
+            <summary>
+            
+            </summary>
+            <param name="contexto"></param>
+        </member>
+        <member name="M:ExameCapApi.Controllers.PassageiroController.GetAll(System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <summary>
+            Lista todos os registros da tabela Passageiro por Paginação.
+            </summary>
+            <param name="take"> Onde inicia os resultados da pesquisa. </param>
+            <param name="skip"> Quantos registros serão retornados. </param>
+            <returns> Todos os registros. </returns>
+        </member>
+        <member name="M:ExameCapApi.Controllers.PassageiroController.GetByFuncionarioId(System.Int32)">
+            <summary>
+             Lista os registro usando a chave de Passageiro.
+            </summary>
+            <param name="chave"> Chave de pesquisa. </param>
+            <returns> Registro localizado. </returns>
+        </member>
+        <member name="M:ExameCapApi.Controllers.PassageiroController.Post(ExameCAP.Poco.PassageiroPoco)">
+            <summary>
+            Inclui um novo dado na tabela Passageiro.
+            </summary>
+            <param name="poco"> Dados que será incluido. </param>
+            <returns> Dados incluido. </returns>
+        </member>
+        <member name="M:ExameCapApi.Controllers.PassageiroController.Put(ExameCAP.Poco.PassageiroPoco)">
+            <summary>
+            Altera um dado existente na tabela Passageiro.
+            </summary>
+            <param name="poco"> Altera o dado selecionado. </param>
+            <returns> Altera o dado selecionado. </returns>
+        </member>
+        <member name="M:ExameCapApi.Controllers.PassageiroController.DeleteById(System.Int32)">
             <summary>
             Exclui um registro existente no recurso, utilizando um id.
             </summary>

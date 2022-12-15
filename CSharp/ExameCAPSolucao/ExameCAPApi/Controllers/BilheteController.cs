@@ -12,31 +12,31 @@ namespace ExameCapApi.Controllers
     /// </summary>
     [Route("api/exame/[controller]")]
     [ApiController]
-    public class FuncionarioController : ControllerBase
+    public class BilheteController : ControllerBase
     {
-        private FuncionarioService servico;
+        private BilheteService servico;
 
         /// <summary>
         /// 
         /// </summary>
         /// <param name="contexto"></param>
-        public FuncionarioController(ExameCAPContext contexto) : base()
+        public BilheteController(ExameCAPContext contexto) : base()
         {
-            this.servico = new FuncionarioService(contexto);
+            this.servico = new BilheteService(contexto);
         }
 
         /// <summary>
-        /// Lista todos os registros da tabela Funcionário por Paginação.
+        /// Lista todos os registros da tabela Bilhete por Paginação.
         /// </summary>
         /// <param name="take"> Onde inicia os resultados da pesquisa. </param>
         /// <param name="skip"> Quantos registros serão retornados. </param>
         /// <returns> Todos os registros. </returns>
         [HttpGet]
-        public ActionResult<List<FuncionarioPoco>> GetAll(int? take = null, int? skip = null)
+        public ActionResult<List<BilhetePoco>> GetAll(int? take = null, int? skip = null)
         {
             try
             {
-                List<FuncionarioPoco> listaPoco = this.servico.Listar(take, skip);
+                List<BilhetePoco> listaPoco = this.servico.Listar(take, skip);
                 return Ok(listaPoco);
             }
             catch (Exception ex)
@@ -46,16 +46,16 @@ namespace ExameCapApi.Controllers
         }
 
         /// <summary>
-        ///  Lista os registro usando a chave de Funcionário.
+        ///  Lista os registro usando a chave de Bilhete.
         /// </summary>
         /// <param name="chave"> Chave de pesquisa. </param>
         /// <returns> Registro localizado. </returns>
         [HttpGet("{chave:int}")]
-        public ActionResult<FuncionarioPoco> GetByFuncionarioId(int chave)
+        public ActionResult<BilhetePoco> GetByFuncionarioId(int chave)
         {
             try
             {
-                FuncionarioPoco poco = this.servico.PesquisarPelaChave(chave);
+                BilhetePoco poco = this.servico.PesquisarPelaChave(chave);
                 return Ok(poco);
             }
             catch (Exception ex)
@@ -65,16 +65,16 @@ namespace ExameCapApi.Controllers
         }
 
         /// <summary>
-        /// Inclui um novo dado na tabela Funcionário.
+        /// Inclui um novo dado na tabela Bilhete.
         /// </summary>
         /// <param name="poco"> Dados que será incluido. </param>
         /// <returns> Dados incluido. </returns>
         [HttpPost]
-        public ActionResult<FuncionarioPoco> Post([FromBody] FuncionarioPoco poco)
+        public ActionResult<BilhetePoco> Post([FromBody] BilhetePoco poco)
         {
             try
             {
-                FuncionarioPoco novoPoco = this.servico.Inserir(poco);
+                BilhetePoco novoPoco = this.servico.Inserir(poco);
                 return Ok(novoPoco);
             }
             catch (Exception ex)
@@ -84,16 +84,16 @@ namespace ExameCapApi.Controllers
         }
 
         /// <summary>
-        /// Altera um dado existente na tabela Funcionário.
+        /// Altera um dado existente na tabela Bilhete.
         /// </summary>
         /// <param name="poco"> Altera o dado selecionado. </param>
         /// <returns> Altera o dado selecionado. </returns>
         [HttpPut]
-        public ActionResult<FuncionarioPoco> Put([FromBody] FuncionarioPoco poco)
+        public ActionResult<BilhetePoco> Put([FromBody] BilhetePoco poco)
         {
             try
             {
-                FuncionarioPoco novoPoco = this.servico.Alterar(poco);
+                BilhetePoco novoPoco = this.servico.Alterar(poco);
                 return Ok(novoPoco);
             }
             catch (Exception ex)
@@ -108,11 +108,11 @@ namespace ExameCapApi.Controllers
         /// <param name="chave"> Chave para localização. </param>
         /// <returns> Dado excluido por Id. </returns>
         [HttpDelete("{chave:int}")]
-        public ActionResult<FuncionarioPoco> DeleteById(int chave)
+        public ActionResult<BilhetePoco> DeleteById(int chave)
         {
             try
             {
-                FuncionarioPoco poco = this.servico.Excluir(chave);
+                BilhetePoco poco = this.servico.Excluir(chave);
                 return Ok(poco);
             }
             catch (Exception ex)

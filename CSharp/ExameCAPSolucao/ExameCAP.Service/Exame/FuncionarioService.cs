@@ -57,7 +57,6 @@ namespace ExameCAP.Service.Exame
                         Matricula = fun.Matricula,
                         ContaCorrente = fun.ContaCorrente,
                         DataNascimento = fun.DataNascimento,
-                        Situacao = fun.Situacao,
                     }
             )
             .ToList();

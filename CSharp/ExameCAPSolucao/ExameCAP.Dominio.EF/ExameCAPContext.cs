@@ -31,16 +31,6 @@ namespace ExameCAP.Dominio.EF
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
 
-            modelBuilder.Entity<Funcionario>(entity =>
-            {
-                entity.Property(e => e.Situacao).HasDefaultValueSql("((1))");
-            });
-
-            modelBuilder.Entity<Passageiro>(entity =>
-            {
-                entity.Property(e => e.Situacao).HasDefaultValueSql("((1))");
-            });
-
             OnModelCreatingPartial(modelBuilder);
         }
 

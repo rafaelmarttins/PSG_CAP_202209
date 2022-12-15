@@ -36,12 +36,9 @@ namespace ExameCAP.Dominio.EF
         public string Matricula { get; set; } = null!;
 
         [Column(name: "ContaCorrente")]
-        public string ContaCorrente { get; set; } = null!;
+        public string ContaCorrente {    get; set; } = null!;
 
-        [Column(name: "DataNascimento", TypeName = "datetime")]
+        [Column(name: "DataNascimento", TypeName = "date")]
         public DateTime DataNascimento { get; set; }
-
-        [Column(name: "Situacao")]
-        public bool? Situacao { get; set; }
     }
 }
